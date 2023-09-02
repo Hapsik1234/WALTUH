@@ -1,0 +1,21 @@
+{
+  "name": "mcserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "play-sound": "^1.1.5",
+    "socket.io": "^4.7.1",
+    "socket.io-client": "^4.7.1",
+    "socket.io-parser": "^4.2.4",
+    "sound-play": "^1.1.0"
+  },
+  "devDependencies": {
+    "snowpack": "^3.8.8"
+  }
+}

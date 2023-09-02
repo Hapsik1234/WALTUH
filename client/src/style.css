@@ -1,0 +1,166 @@
+body {
+    background-color: #1f1f1f;
+    margin: 0px;
+    padding: 0px;
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+#content {
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 20px;
+    padding: 20px;
+    padding-top: 30px;
+    background-color: #878580;
+    width: 60%;
+    text-align: center;
+	border-radius: 20px;
+}
+
+.incontent {
+	font-size: 20px;
+	width: 100%;
+	background-color: #35b88e;
+	padding: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+}
+
+
+
+.button {
+	font-size: 35px;
+	font-family: 'Maven Pro', sans-serif;
+	padding: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+	transition: background-color 0.5s ease;
+	border: 0px solid #000000;
+	margin-top: 25px;
+	border-radius: 15px;
+}
+
+.button:hover {
+	transition: background-color 0.5s ease;
+	cursor: pointer;
+	
+}
+
+.off {
+	background-color: #0cf57d;
+}
+
+.on {
+	background-color: #ed5353;
+}
+
+.off:hover {
+	background-color: #09ba5f;
+}
+
+.on:hover {
+	background-color: #ea1235;
+}
+
+#svstate {
+	font-size: 20px;
+	width: 100%;
+	background-color: #35b88e;
+	padding: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+}
+
+.icon {
+	height: 41px;
+	width: 41px;
+}
+
+#topbar {
+    background-color: #111; padding: 10px 0; text-align: center; 
+    border-bottom: 2px solid #333; display: flex; justify-content: 
+    center; align-items: center;
+  }
+
+#topbar a {
+	color: #fff; text-decoration: none; margin: 0 20px; position: 
+    relative;
+}
+
+#topbar a:hover {
+    color: #66ccff;
+}
+
+.separator { width: 1px; height: 20px; background-color: #333; 
+    margin: 0 10px;
+}
+
+@media (max-width: 600px) {
+    #topbar {
+      flex-direction: column !important;
+    }
+    
+    .separator { display: none !important;
+    }
+    #topbar a {
+      margin: 10px !important;
+    }
+	#svstate {
+		font-size: 15px;
+	}
+	.incontent {
+		font-size: 15px;
+	}
+	#svstate button {
+		font-size: 15px;
+	}
+	#content {
+		width: 90%;
+		left: 50%;
+		right: 50%;
+		margin-left: 0px;
+		margin-right: 5%;
+		padding-left: 5%;
+		padding-right: 5%;
+		border-radius: 0px;
+	}
+}
+
+#consolespace .output:nth-child(even) {
+	background-color: #999999;
+}
+
+#consolespace .output:nth-child(odd) {
+	background-color: #787878;
+}
+
+.output {
+	width: 94%;
+	padding: 1%;
+	margin-left: 2%;
+	margin-right: 2%;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	align-self: flex-start;
+}
+
+#consolespace {
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	background-color: #4d4747;
+	height: 85%;
+}
