@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "prodStart": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "socket.io": "^4.7.1",
+    "socket.io-client": "^4.7.1",
+    "ssh2": "^1.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
