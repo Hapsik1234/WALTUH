@@ -108,6 +108,66 @@ body {
     margin: 0 10px;
 }
 
+#consolespace .output:nth-child(even) {
+	background-color: #999999;
+}
+
+#consolespace .output:nth-child(odd) {
+	background-color: #787878;
+}
+
+.output {
+	width: 94%;
+	padding: 1%;
+	margin-left: 2%;
+	margin-right: 2%;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	align-self: flex-start;
+}
+
+#consolespace {
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	background-color: #4d4747;
+	height: 85%;
+}
+
+#popup-container {
+	display: absolute;
+	width: 20%;
+	flex-direction: column;
+	margin-left: auto;
+	margin-top: auto;
+	 /* Red background color */
+    color: #fff; /* White text color */
+    
+}
+
+.popup {
+	display: block;
+	height: 150px;
+	padding: 5px;
+	margin-top: 10px;
+	background-color: #ff6666;
+	padding: 15px;
+    border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#tower-of-piza {
+	position: absolute;
+	width: 100%;
+	bottom: 0%;
+	z-index: 1000;
+}
+
+.popup-inner {
+	margin-top: 0px;
+	display: block;
+}
+
 @media (max-width: 600px) {
     #topbar {
       flex-direction: column !important;
@@ -137,30 +197,7 @@ body {
 		padding-right: 5%;
 		border-radius: 0px;
 	}
-}
-
-#consolespace .output:nth-child(even) {
-	background-color: #999999;
-}
-
-#consolespace .output:nth-child(odd) {
-	background-color: #787878;
-}
-
-.output {
-	width: 94%;
-	padding: 1%;
-	margin-left: 2%;
-	margin-right: 2%;
-	padding-top: 1px;
-	padding-bottom: 1px;
-	align-self: flex-start;
-}
-
-#consolespace {
-	text-align: left;
-	display: flex;
-	flex-direction: column;
-	background-color: #4d4747;
-	height: 85%;
+	#popup-container {
+		width: 70%;
+	}
 }

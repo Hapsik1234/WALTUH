@@ -22,7 +22,7 @@
 		}
 	}
 
-	//authcheck($key);	//Uncomment for service work
+	authcheck($key);	//Uncomment for service work
 ?>
 
 <html>
@@ -44,6 +44,10 @@
 		<title>4Fun Server</title>
 	</head>
 	<body>
+	<div id="tower-of-piza">
+		<div id="popup-container">
+		</div>
+	</div>
 	<div id="topbar"> 
 		<span class="separator"></span> 
 		<a href="#">Home</a> 
@@ -58,17 +62,16 @@
 		<div id="content">
 			<?php
 				
-				function isServerStarted() {
-						
-						$processName = 'test.exe';
-						$command = "ps aux | grep -v grep | grep 'java'";
-						$output = shell_exec($command);
-						if (strpos($output, 'java') !== false) {
-							return 1;
-						} else {
-							return 0;
-						}
+				function isServerStarted() { 
+					$processName = 'test.exe';
+					$command = "ps aux | grep -v grep | grep 'java'";
+					$output = shell_exec($command);
+					if (strpos($output, 'java') !== false) {
+						return 1;
+					} else {
+						return 0;
 					}
+				}
 				echo('<div id="svstate">Stan serwera: ');
 				if(!isServerStarted()) {
 					echo(' Offline</div>');
