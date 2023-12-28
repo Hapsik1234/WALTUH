@@ -139,15 +139,14 @@ body {
 	width: 20%;
 	flex-direction: column;
 	margin-left: auto;
-	margin-top: auto;
-	 /* Red background color */
+	margin-top: auto; /* Red background color */
     color: #fff; /* White text color */
     
 }
 
 .popup {
 	display: block;
-	height: 150px;
+	height: auto;
 	padding: 5px;
 	margin-top: 10px;
 	background-color: #ff6666;
@@ -166,6 +165,31 @@ body {
 .popup-inner {
 	margin-top: 0px;
 	display: block;
+}
+
+#christmas {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	background: url(https://i.ibb.co/bvmDYXF/new-year-1911483-1920-up.png);
+	background-repeat: repeat;
+	background-size: contain;
+	z-index: 999;
+	top: 0%;
+}
+
+body {
+	margin-top: 100px;
+}
+
+#snow {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	background: url(https://www.animationsoftware7.com/img/agifs/snow02.gif);
+	background-size: contain;
 }
 
 @media (max-width: 600px) {
@@ -201,3 +225,4 @@ body {
 		width: 70%;
 	}
 }
+

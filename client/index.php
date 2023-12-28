@@ -44,45 +44,32 @@
 		<title>4Fun Server</title>
 	</head>
 	<body>
-	<div id="tower-of-piza">
-		<div id="popup-container">
+		<div id="christmas"></div>
+		<div id="tower-of-piza">
+			<div id="popup-container">
+			</div>
 		</div>
-	</div>
-	<div id="topbar"> 
-		<span class="separator"></span> 
-		<a href="#">Home</a> 
-		<span class="separator"></span> 
-		<a href="#">Konsola</a> 
-		<span class="separator"></span> 
-		<a href="#">Gracze</a>
-		<span class="separator"></span> 
-		<a href="#">Wydajność</a>
-		<span class="separator"></span> 
-  	</div>
-		<div id="content">
-			<?php
-				
-				function isServerStarted() { 
-					$processName = 'test.exe';
-					$command = "ps aux | grep -v grep | grep 'java'";
-					$output = shell_exec($command);
-					if (strpos($output, 'java') !== false) {
-						return 1;
-					} else {
-						return 0;
-					}
-				}
-				echo('<div id="svstate">Stan serwera: ');
-				if(!isServerStarted()) {
-					echo(' Offline</div>');
-					echo('<button class="button power off" value="Start" type="button" name="start" id="serverpowerst">Start');
-				} else {
-					echo(' Online</div>');
-					echo('<button class="button power on" value="Stop" type="button" name="stop" id="serverpowerst">Stop');
-				}
-				echo('</button>')
-			?>
+		<div id="topbar"> 
+			<span class="separator"></span> 
+			<a href="#">Home</a> 
+			<span class="separator"></span> 
+			<a href="#">Konsola</a> 
+			<span class="separator"></span> 
+			<a href="#">Gracze</a>
+			<span class="separator"></span> 
+			<a href="#">Wydajność</a>
+			<span class="separator"></span> 
 		</div>
+			<div id="content">
+
+			<div id="svstate">
+				Stan serwera: Nie można nawiązać połączenia z serwerem.
+			</div>
+
+			<button class="button power" value="Start" type="button" name="" id="serverpowerst">
+				Błąd
+			</button>
+			</div>
 	</body>
 </html>
 
