@@ -6,10 +6,12 @@ const const_server_port = 3000    //Port od WebSocketa (nwm czy to się tłumacz
 const const_username = ''     //Hasło do użytkownika Ubuntu
 const const_password = ''    //Nazwa użytkownika Ubuntu
 const const_ssh2_port = 22      //Port do serwera ssh2
-const const_path_to_mcserver = "/home/bolk/Pulpit/mcserver/"   //Ścieżka do serwera mc
+const const_path_to_mcserver = "D:\\desktop -  heavy\\dwd\\minecraft\\java\\.server 4fun"   //Ścieżka do serwera mc
 const const_server_start = "run.sh"    //Nazwa pliku co go uruchamiasz
 const command = 'cd';
-const args = ['/home/bolk/Pulpit/mcserver', '&&', './run.sh'];
+const args = [const_path_to_mcserver, '&&', 'call run.bat'];
+
+// Defining class that enables communication of minecraft server and web socket server
 
 class Communicator {
   constructor() {
@@ -41,7 +43,7 @@ class Communicator {
 }
 
 
-
+// Defining WebSocket server
 const io = require('socket.io')(3000, {
     cors: {
         orgin: ["http://big-idle.at.ply.gg:53454"]
@@ -49,64 +51,87 @@ const io = require('socket.io')(3000, {
 })
 
 
-const readline = require('readline');
+
 const { spawn } = require('child_process');
-const { error } = require('console')
-
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
 
 var commin = new Communicator();
 var commout = new Communicator();
 
-let continueListening = true;
+var mcserverstate = 0;  // State of mcserver: 0 - off; 1 - starting; 2 - online;
+
 let serverStarted = false;
 let cmd;
 
 io.on("connection", socket => {
-  io.emit('admin-log', "\"Hello World!\" from server")
-  console.log("User " + socket.id.toString() + " connected")
+
+  io.emit('admin-log', "\"Hello World!\" from server");
+  io.emit('srvstchange', mcserverstate);
+  console.log("User " + socket.id.toString() + " connected");
+
+  // Handle requests from WebSocket
+
   socket.on('request', (request) => {
-      console.log("Requsted " + request + " from " + socket.id)
+      console.log("Requsted " + request + " from " + socket.id);
       switch(request) {
           case "server-start":
-            console.log("Starting server")
-            commin.emit('clientreq', "start")
+            console.log("Starting server");
+            commin.emit('clientreq', "start");
             //fetch("http://localhost:8080/mcserver/server/run_command.php?command=start notepad.exe")
-            io.emit('srvstchange', 1)
+            
             break
           case "server-stop":
-            console.log("Stopping server")
-            commin.emit('clientreq', "stop")
+            console.log("Stopping server");
+            commin.emit('clientreq', "stop");
+            mcserverstate = 3;
             break
       }
   })
+
+  // Handle requests from minecraft server
+
   commout.on('serverst', (state) => {
-    if (state=="stop") {
-      io.emit('srvstchange', 0)
-    } else if (state=="online") {
-      io.emit('srvstchange', 2)
+    console.log("Recived from mc");
+
+    switch(state) {
+      case "stop":  // Minecraft server stoped
+        console.log("Recived from mc: Server stoped");
+        io.emit('srvstchange', 0);
+      break
+      case "start": // Minecraft server starting
+        console.log("Recived from mc: Server starting");
+        io.emit('srvstchange', 1);
+      break
+      case "online":  // Minecraft server started
+        console.log("Recived from mc: Server started");
+        io.emit('srvstchange', 2);
+      break
+      
     }
     
   })
 })
 
 
+// Turning on and off the minecraft server
 
 commin.on('clientreq', (req) => {
 
+  console.log("Recived request from server");
 
   if (req === "start" && !serverStarted) {
+
+    console.log("Recived request from server: start");
+
     cmd = spawn(command, args, { shell: true });
+    mcserverstate = 1;
+    commout.emit("serverst", "start");
 
     cmd.stdout.on('data', (data) => {
       console.log('\x1b[34m\x1b[1m%s\x1b[0m', `[Minecraft] ${data}`);
       if (data.toString().includes("Done")) {
         console.log("Server successfully started!");
         commout.emit('serverst', "online");
+        mcserverstate = 2;
         serverStarted = true;
       }
     });
@@ -116,20 +141,25 @@ commin.on('clientreq', (req) => {
     });
 
     cmd.on('close', (code) => {
-      console.log('\x1b[1m\x1b[34m%s\x1b[0m',`Minecraft server stopped with error code: ${code}`);
+      console.log('\x1b[1m\x1b[34m%s\x1b[0m',`Minecraft server has been stopped with error code: ${code}`);
       commout.emit('serverst', "stop");
       serverStarted = false;
+      mcserverstate = 0;
       if (cmd) {
         cmd.kill();
       }
-      continueListening = false;
     });
   }
 
   if (req === "stop") {
-    console.log("Actually tring to stop server")
+    console.log("Recived request from server: stop");
+    console.log("Actually tring to stop server");
     cmd.stdin.write('stop\n');
   }
 });
 
-console.log('\x1b[1m\x1b[30m%s\x1b[0m',"OK")
+
+
+// No errors announcement
+
+console.log('\x1b[1m\x1b[30m%s\x1b[0m',"OK");
