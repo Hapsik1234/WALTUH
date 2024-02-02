@@ -1,6 +1,6 @@
 <?php
-	$const_ip = "instead-former.at.ply.gg";	//Twoje ip
-	$const_server_port = "4073";	//Port od gniazda sieciowego (zobacz server.js)
+	$const_ip = "method-tries.gl.at.ply.gg";	//Twoje ip instead-former.at.ply.gg
+	$const_server_port = "19311";	//Port od gniazda sieciowego (zobacz server.js)
 	$key = "oJD8XtaeBQrsprQ0eVareQ";
 
 	header('Access-Control-Allow-Origin: https://4fun-server.glitch.me');
@@ -25,7 +25,7 @@
 	authcheck($key);	//Uncomment for service work
 ?>
 
-<html>
+<html> 
 	<head>
 		<link rel="icon" href="assets/icon.png">
 		<link rel="stylesheet" href="src/style.css">
@@ -40,7 +40,7 @@
 		?>
 		<!--script defer type="module" src="http://localhost:8080/mcserver/client/node_modules/socket.io-client/build/esm/index.js"></script!-->
 		<script type="text/javascript" src="src/script.js"></script>
-		<script defer src="./src/client.js"></script>
+		<script defer src="src/client.js"></script>
 		<title>4Fun Server</title>
 	</head>
 	<body>
@@ -51,13 +51,13 @@
 		</div>
 		<div id="topbar"> 
 			<span class="separator"></span> 
-			<a href="#">Home</a> 
+			<a href="#" id="gohome">Home</a> 
 			<span class="separator"></span> 
-			<a href="#">Konsola</a> 
+			<a href="#" id="goconsole">Konsola</a> 
 			<span class="separator"></span> 
-			<a href="#">Gracze</a>
+			<a href="#" id="goplayers">Gracze</a>
 			<span class="separator"></span> 
-			<a href="#">Wydajność</a>
+			<a href="#" id="goperformance">Wydajność</a>
 			<span class="separator"></span> 
 		</div>
 			<div id="content">
