@@ -141,7 +141,7 @@ body {
 	margin-left: auto;
 	margin-top: auto; /* Red background color */
     color: #fff; /* White text color */
-    
+    pointer-events: none;
 }
 
 .popup {
@@ -153,6 +153,7 @@ body {
 	padding: 15px;
     border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	pointer-events: all;
 }
 
 #tower-of-piza {
@@ -160,6 +161,7 @@ body {
 	width: 100%;
 	bottom: 0%;
 	z-index: 1000;
+	pointer-events: none;
 }
 
 .popup-inner {
