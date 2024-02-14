@@ -157,7 +157,9 @@ case "request":
     break;
   }
   case "command":
-  server.cmd.stdin.write(request + '\n');
+   if (server.state== "on"){
+      server.cmd.stdin.write(request + '\n');
+   }
 
   break;
  }
