@@ -1,13 +1,25 @@
 {
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "unlock_right_away": "2024-02-02 13:19:15 +0100"
+      "unlock_right_away": "2024-02-09 20:39:52 +0100"
+    },
+    "done": true
+  },
+  "betterdeserttemples:root": {
+    "criteria": {
+      "always": "2024-02-09 20:39:52 +0100"
+    },
+    "done": true
+  },
+  "betterdungeons:root": {
+    "criteria": {
+      "always": "2024-02-09 20:39:52 +0100"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:desert": "2024-02-02 13:19:16 +0100"
+      "minecraft:snowy_taiga": "2024-02-09 20:39:53 +0100"
     },
     "done": false
   },
