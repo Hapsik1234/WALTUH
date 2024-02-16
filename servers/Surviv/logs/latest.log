@@ -1,14 +1,14 @@
-[21:19:30] [main/INFO]: Loading Minecraft 1.20.1 with Quilt Loader 0.23.1
-[21:19:30] [main/INFO]: Loading mappings: jar:file:/home/bolk/Pulpit/server/serverside/servers/Surviv/libraries/net/fabricmc/intermediary/1.20.1/intermediary-1.20.1.jar!/mappings/mappings.tiny
-[21:19:31] [main/WARN]: Warnings for quilt.mod.json at: '<mods>/snowyleavesplus-mc1.20.4-0.1.9.jar!/quilt.mod.json'
-[21:19:31] [main/WARN]: - Deprecated array format for dependencies: see https://github.com/QuiltMC/rfcs/pull/56 for more information.
-[21:19:31] [main/WARN]: - Unnecessary dependency range 1.20 at line 15 column 33 path $.quilt_loader.depends[2].versions[1] (resolves as [1.20, 2)), since it doesn't affect the result [1.19.4, 2)
-[21:19:31] [main/WARN]: - Unnecessary dependency range 1.20.1 at line 15 column 41 path $.quilt_loader.depends[2].versions[2] (resolves as [1.20.1, 2)), since it doesn't affect the result [1.19.4, 2)
-[21:19:31] [main/WARN]: - Unnecessary dependency range 1.20.2 at line 15 column 51 path $.quilt_loader.depends[2].versions[3] (resolves as [1.20.2, 2)), since it doesn't affect the result [1.19.4, 2)
-[21:19:31] [main/WARN]: - Unnecessary dependency range 1.20.3 at line 15 column 61 path $.quilt_loader.depends[2].versions[4] (resolves as [1.20.3, 2)), since it doesn't affect the result [1.19.4, 2)
-[21:19:31] [main/WARN]: - Unnecessary dependency range 1.20.4 at line 15 column 71 path $.quilt_loader.depends[2].versions[5] (resolves as [1.20.4, 2)), since it doesn't affect the result [1.19.4, 2)
-[21:19:32] [main/WARN]: at line 35 column 28 path $.quilt_loader.depends[1].unless is undecided, and has a weight of 0 ?
-[21:19:33] [main/INFO]: Loading 167 mods:
+[14:03:25] [main/INFO]: Loading Minecraft 1.20.1 with Quilt Loader 0.23.1
+[14:03:25] [main/INFO]: Loading mappings: jar:file:/home/bolk/Pulpit/server/serverside/servers/Surviv/libraries/net/fabricmc/intermediary/1.20.1/intermediary-1.20.1.jar!/mappings/mappings.tiny
+[14:03:26] [main/WARN]: Warnings for quilt.mod.json at: '<mods>/snowyleavesplus-mc1.20.4-0.1.9.jar!/quilt.mod.json'
+[14:03:26] [main/WARN]: - Deprecated array format for dependencies: see https://github.com/QuiltMC/rfcs/pull/56 for more information.
+[14:03:26] [main/WARN]: - Unnecessary dependency range 1.20 at line 15 column 33 path $.quilt_loader.depends[2].versions[1] (resolves as [1.20, 2)), since it doesn't affect the result [1.19.4, 2)
+[14:03:26] [main/WARN]: - Unnecessary dependency range 1.20.1 at line 15 column 41 path $.quilt_loader.depends[2].versions[2] (resolves as [1.20.1, 2)), since it doesn't affect the result [1.19.4, 2)
+[14:03:26] [main/WARN]: - Unnecessary dependency range 1.20.2 at line 15 column 51 path $.quilt_loader.depends[2].versions[3] (resolves as [1.20.2, 2)), since it doesn't affect the result [1.19.4, 2)
+[14:03:26] [main/WARN]: - Unnecessary dependency range 1.20.3 at line 15 column 61 path $.quilt_loader.depends[2].versions[4] (resolves as [1.20.3, 2)), since it doesn't affect the result [1.19.4, 2)
+[14:03:26] [main/WARN]: - Unnecessary dependency range 1.20.4 at line 15 column 71 path $.quilt_loader.depends[2].versions[5] (resolves as [1.20.4, 2)), since it doesn't affect the result [1.19.4, 2)
+[14:03:27] [main/WARN]: at line 35 column 28 path $.quilt_loader.depends[1].unless is undecided, and has a weight of 0 ?
+[14:03:28] [main/INFO]: Loading 167 mods:
 | Index | Mod                                            | ID                                           | Version             | Type    | File Hash (SHA-1)                        | File(s)                                                                                                                          | Sub-File                                                                    |
 |------:|------------------------------------------------|----------------------------------------------|---------------------|---------|------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 |    29 | Alternate Current                              | alternate-current                            | 1.7.0               | Fabric  | 4136198cbd1ee00e906f33fc533e10a9324fc2b9 | <mods>/alternate-current-mc1.20-1.7.0.jar                                                                                        |                                                                             |
@@ -204,118 +204,118 @@
 |------:|------------------------------------------------|----------------------------------------------|---------------------|---------|------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 Mod Table Version: 2
 Plugin Types: {quilted_fabric_loader=[Fabric], quilt_loader=[Quilt, Builtin]}
-[21:19:33] [main/INFO]: Successfully patched reflections to be able to handle quilt file systems.
-[21:19:33] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/home/bolk/Pulpit/server/serverside/servers/Surviv/libraries/net/fabricmc/sponge-mixin/0.12.5+mixin.0.8.5/sponge-mixin-0.12.5+mixin.0.8.5.jar Service=Knot/Quilt Env=SERVER
-[21:19:33] [main/INFO]: Compatibility level set to JAVA_17
-[21:19:33] [main/WARN]: Reference map 'meadow-fabric-refmap.json' for #meadow:meadow.mixins.json could not be read. If this is a development environment you can ignore this message
-[21:19:33] [main/WARN]: Reference map 'nerb-quilt-refmap.json' for #nerb:nerb.mixins.json could not be read. If this is a development environment you can ignore this message
-[21:19:33] [main/INFO]: Preloading Debugify
-[21:19:33] [main/WARN]: Reference map 'memoryleakfix-fabric-1.17+-fabric-refmap.json' for #memoryleakfix:memoryleakfix-fabric.mixins.json could not be read. If this is a development environment you can ignore this message
-[21:19:34] [main/INFO]: [MemoryLeakFix] Will be applying 1 memory leak fixes!
-[21:19:34] [main/INFO]: [MemoryLeakFix] Currently enabled memory leak fixes: [biomeTemperatureLeak]
-[21:19:35] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.2).
-[21:19:35] [main/INFO]: I used the json to destroy the json
-[21:19:35] [main/WARN]: Found illegal access from SuperMartijn642's Core Lib to Quilt Loader
+[14:03:28] [main/INFO]: Successfully patched reflections to be able to handle quilt file systems.
+[14:03:28] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/home/bolk/Pulpit/server/serverside/servers/Surviv/libraries/net/fabricmc/sponge-mixin/0.12.5+mixin.0.8.5/sponge-mixin-0.12.5+mixin.0.8.5.jar Service=Knot/Quilt Env=SERVER
+[14:03:28] [main/INFO]: Compatibility level set to JAVA_17
+[14:03:28] [main/WARN]: Reference map 'meadow-fabric-refmap.json' for #meadow:meadow.mixins.json could not be read. If this is a development environment you can ignore this message
+[14:03:28] [main/WARN]: Reference map 'nerb-quilt-refmap.json' for #nerb:nerb.mixins.json could not be read. If this is a development environment you can ignore this message
+[14:03:28] [main/INFO]: Preloading Debugify
+[14:03:28] [main/WARN]: Reference map 'memoryleakfix-fabric-1.17+-fabric-refmap.json' for #memoryleakfix:memoryleakfix-fabric.mixins.json could not be read. If this is a development environment you can ignore this message
+[14:03:29] [main/INFO]: [MemoryLeakFix] Will be applying 1 memory leak fixes!
+[14:03:29] [main/INFO]: [MemoryLeakFix] Currently enabled memory leak fixes: [biomeTemperatureLeak]
+[14:03:29] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.2).
+[14:03:29] [main/INFO]: I used the json to destroy the json
+[14:03:29] [main/WARN]: Found illegal access from SuperMartijn642's Core Lib to Quilt Loader
  class com/supermartijn642/core/CoreLibPreLaunch.onPreLaunch()V
  accessed the field org/quiltmc/loader/impl/QuiltLoaderImpl.INSTANCE
 Please don't use this, instead try using the public api class org.quiltmc.loader.api.QuiltLoader - that way you can have guaranteed backwards compatibility!
-[21:19:35] [main/WARN]: Found illegal access from SuperMartijn642's Core Lib to Quilt Loader
+[14:03:29] [main/WARN]: Found illegal access from SuperMartijn642's Core Lib to Quilt Loader
  class com/supermartijn642/core/CoreLibPreLaunch.onPreLaunch()V
  accessed the field org/quiltmc/loader/impl/util/DefaultLanguageAdapter.INSTANCE
 Please don't use this, instead ask Quilt Loader to declare a new public API that can have guaranteed backwards compatibility!
-[21:19:35] [main/WARN]: @Inject(@At("INVOKE")) Shift.BY=2 on #quilt_testing:quilt_testing.mixins.json:server.MainMixin from mod quilt_testing::handler$zni000$quilt_testing$onStart exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
-[21:19:35] [main/WARN]: Configuration conflict: there is more than one oshi.properties file on the classpath: [quilt.zfs://minecraft-1.20.1.i0:0/oshi.properties, jar:file:/home/bolk/Pulpit/server/serverside/servers/Surviv/libraries/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar!/oshi.properties]
-[21:19:35] [main/WARN]: Configuration conflict: there is more than one oshi.architecture.properties file on the classpath: [quilt.zfs://minecraft-1.20.1.i0:0/oshi.architecture.properties, jar:file:/home/bolk/Pulpit/server/serverside/servers/Surviv/libraries/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar!/oshi.architecture.properties]
-[21:19:36] [main/INFO]: Mixing common.MixinFriendlyByteBuf from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_2540
-[21:19:36] [main/INFO]: Renaming synthetic method lambda$onWriteJsonWithCodec$1(Ljava/lang/Object;Ljava/lang/String;)Lio/netty/handler/codec/EncoderException; to mdbc572b$nochatreports$lambda$onWriteJsonWithCodec$1$0 in #nochatreports:mixins/common/nochatreports.mixins.json:common.MixinFriendlyByteBuf from mod nochatreports
-[21:19:36] [main/INFO]: Renaming synthetic method lambda$onReadJsonWithCodec$0(Ljava/lang/String;)Lio/netty/handler/codec/DecoderException; to mdbc572b$nochatreports$lambda$onReadJsonWithCodec$0$1 in #nochatreports:mixins/common/nochatreports.mixins.json:common.MixinFriendlyByteBuf from mod nochatreports
-[21:19:41] [main/INFO]: Mixing server.MixinServerGamePacketListenerImpl from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_3244
-[21:19:42] [main/INFO]: [Quilt Command] Networking support is enabled
-[21:19:42] [main/INFO]: [voicechat] Compatibility version 18
-[21:19:42] [main/INFO]: [voicechat] Loading plugins
-[21:19:42] [main/INFO]: [voicechat] Loaded 1 plugin(s)
-[21:19:42] [main/INFO]: [voicechat] Initializing plugins
-[21:19:42] [main/INFO]: Initializing Simple Voice Chat integration
-[21:19:42] [main/INFO]: [voicechat] Initialized 1 plugin(s)
-[21:19:42] [main/INFO]: [voicechat] Registering events for 'sound_physics_remastered'
-[21:19:43] [main/WARN]: Assets URL 'quilt.zfs://minecraft-1.20.1.i0:0/assets/.mcassetsroot' uses unexpected schema
-[21:19:43] [main/WARN]: Assets URL 'quilt.zfs://minecraft-1.20.1.i0:0/data/.mcassetsroot' uses unexpected schema
-[21:19:43] [main/INFO]: ARRP register - before vanilla
-[21:19:43] [main/INFO]: ARRP register - after vanilla
-[21:19:43] [main/INFO]: ARRP register - before vanilla
-[21:19:43] [main/INFO]: ARRP register - after vanilla
-[21:19:43] [main/INFO]: Loading config SimpleCopperPipesConfig from simple_copper_pipes
-[21:19:43] [main/INFO]: Saving config SimpleCopperPipesConfig from simple_copper_pipes
-[21:19:43] [main/INFO]: Processing 4 KiwiModule annotations
-[21:19:43] [main/INFO]: Module [kiwi:contributors] initialized
-[21:19:43] [main/INFO]: Module [passablefoliage:core] initialized
-[21:19:43] [main/INFO]: Module [kiwi:data] initialized
-[21:19:43] [main/INFO]:     recipe_serializer: 3
-[21:19:43] [main/INFO]: Module [passablefoliage:enchantment] initialized
-[21:19:43] [main/INFO]:     enchantment: 1
-[21:19:44] [main/ERROR]: No data fixer registered for doapi:chair
-[21:19:44] [main/INFO]: Registered region minecraft:overworld to index 0 for type OVERWORLD
-[21:19:44] [main/INFO]: Registered region minecraft:nether to index 0 for type NETHER
-[21:19:44] [main/INFO]: Registered region riverredux:overworld to index 1 for type OVERWORLD
-[21:19:44] [main/INFO]: Registered region meadow:overworld to index 2 for type OVERWORLD
-[21:19:44] [main/ERROR]: No data fixer registered for meadow:brown_bear
-[21:19:44] [main/ERROR]: No data fixer registered for meadow:water_buffalo
-[21:19:44] [main/ERROR]: No data fixer registered for meadow:wooly_cow
-[21:19:44] [main/INFO]: Reflections took 36 ms to scan 1 urls, producing 1 keys and 1 values
-[21:19:44] [main/INFO]: Reflections took 7 ms to scan 1 urls, producing 1 keys and 1 values
-[21:19:44] [main/INFO]: Reflections took 4 ms to scan 1 urls, producing 1 keys and 3 values
-[21:19:44] [main/INFO]: Reflections took 3 ms to scan 1 urls, producing 1 keys and 3 values
-[21:19:44] [main/INFO]: Reflections took 3 ms to scan 1 urls, producing 1 keys and 2 values
-[21:19:44] [main/INFO]: Reflections took 4 ms to scan 1 urls, producing 1 keys and 2 values
-[21:19:44] [main/INFO]: Enabled 34 bug fixes: [MC-2025, MC-7569, MC-8187, MC-14923, MC-30391, MC-31819, MC-69216, MC-72151, MC-88371, MC-89146, MC-90084, MC-93018, MC-100991, MC-119417, MC-119754, MC-121706, MC-121903, MC-124117, MC-129909, MC-132878, MC-135971, MC-155509, MC-160095, MC-179072, MC-183990, MC-193343, MC-199467, MC-200418, MC-206922, MC-215530, MC-223153, MC-224729, MC-231743, MC-232869]
-[21:19:44] [main/INFO]: Successfully Debugify'd your game!
-[21:19:44] [main/INFO]: KONNICHIWA ZA WARUDO!
-[21:19:44] [main/INFO]: Default JVM text encoding is: UTF-8
-[21:19:44] [main/INFO]: Reading config file NoChatReports/NCR-Common.json...
-[21:19:44] [main/INFO]: Writing config file NoChatReports/NCR-Common.json...
-[21:19:44] [main/INFO]: Reflections took 2 ms to scan 1 urls, producing 1 keys and 1 values
-[21:19:44] [main/INFO]: Reflections took 1 ms to scan 1 urls, producing 1 keys and 1 values
-[21:19:44] [main/INFO]: Initialize mod Library Ferret
-[21:19:44] [main/INFO]: Initialized mod Library Ferret
-[21:19:44] [main/INFO]: Reflections took 1 ms to scan 1 urls, producing 1 keys and 2 values
-[21:19:44] [main/INFO]: Reflections took 2 ms to scan 1 urls, producing 1 keys and 2 values
-[21:19:44] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:pufferfish_bucket is now minecraft:bucket.
-[21:19:44] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:salmon_bucket is now minecraft:bucket.
-[21:19:44] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:cod_bucket is now minecraft:bucket.
-[21:19:44] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:tropical_fish_bucket is now minecraft:bucket.
-[21:19:44] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:axolotl_bucket is now minecraft:bucket.
-[21:19:44] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:powder_snow_bucket is now minecraft:bucket.
-[21:19:44] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:tadpole_bucket is now minecraft:bucket.
-[21:19:44] [main/INFO]: Loading config FrozenLibConfig from frozenlib
-[21:19:44] [main/INFO]: Saving config FrozenLibConfig from frozenlib
-[21:19:44] [main/INFO]: Reflections took 1 ms to scan 1 urls, producing 1 keys and 2 values
-[21:19:44] [main/INFO]: Reflections took 1 ms to scan 1 urls, producing 1 keys and 2 values
-[21:19:44] [main/INFO]: Loaded maxhealthfix for Fabric.
-[21:19:44] [main/ERROR]: No data fixer registered for decorative_blocks:dummy
-[21:19:44] [main/INFO]: Reflections took 2 ms to scan 1 urls, producing 1 keys and 1 values
-[21:19:44] [main/INFO]: Reflections took 1 ms to scan 1 urls, producing 1 keys and 1 values
-[21:19:44] [main/INFO]: Reflections took 4 ms to scan 1 urls, producing 1 keys and 3 values
-[21:19:44] [main/INFO]: Reflections took 5 ms to scan 1 urls, producing 1 keys and 3 values
-[21:19:44] [main/INFO]: Reflections took 4 ms to scan 1 urls, producing 1 keys and 4 values
-[21:19:44] [main/INFO]: Reflections took 4 ms to scan 1 urls, producing 1 keys and 4 values
-[21:19:44] [main/INFO]: Initializing 'TCD Commons API' 3.5+fabric-1.20.1 as 'TCDCommonsServer'.
-[21:19:44] [main/INFO]: Initializing 'Better Statistics Screen' as 'BetterStatsServer'.
-[21:19:44] [main/WARN]: You specified a resource pack without providing a sha1 hash. Pack will be updated on the client only if you change the name of the pack.
-[21:19:44] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[21:19:45] [main/INFO]: ARRP register - before vanilla
-[21:19:45] [main/INFO]: ARRP register - after vanilla
-[21:19:45] [main/INFO]: ARRP register - before vanilla
-[21:19:45] [main/INFO]: ARRP register - after vanilla
-[21:19:45] [main/INFO]: ARRP register - before user
-[21:19:45] [main/INFO]: ARRP register - before vanilla
-[21:19:45] [main/INFO]: ARRP register - after vanilla
-[21:19:45] [main/INFO]: ARRP register - before vanilla
-[21:19:45] [main/INFO]: ARRP register - after vanilla
-[21:19:46] [main/INFO]: [fabric-registry-sync] Loaded registry data [file 1/4]
-[21:19:48] [main/INFO]: parsing loot tables
-[21:19:48] [main/INFO]: finished parsing loot tables
-[21:19:48] [main/INFO]: Registered 0 custom recipes.
-[21:19:48] [main/ERROR]: Parsing error loading recipe conditional:decorative_blocks/wood_cutter/pine_beam_woodcutter
+[14:03:29] [main/WARN]: @Inject(@At("INVOKE")) Shift.BY=2 on #quilt_testing:quilt_testing.mixins.json:server.MainMixin from mod quilt_testing::handler$zni000$quilt_testing$onStart exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[14:03:29] [main/WARN]: Configuration conflict: there is more than one oshi.properties file on the classpath: [quilt.zfs://minecraft-1.20.1.i0:0/oshi.properties, jar:file:/home/bolk/Pulpit/server/serverside/servers/Surviv/libraries/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar!/oshi.properties]
+[14:03:30] [main/WARN]: Configuration conflict: there is more than one oshi.architecture.properties file on the classpath: [quilt.zfs://minecraft-1.20.1.i0:0/oshi.architecture.properties, jar:file:/home/bolk/Pulpit/server/serverside/servers/Surviv/libraries/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar!/oshi.architecture.properties]
+[14:03:30] [main/INFO]: Mixing common.MixinFriendlyByteBuf from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_2540
+[14:03:30] [main/INFO]: Renaming synthetic method lambda$onWriteJsonWithCodec$1(Ljava/lang/Object;Ljava/lang/String;)Lio/netty/handler/codec/EncoderException; to mdd45112$nochatreports$lambda$onWriteJsonWithCodec$1$0 in #nochatreports:mixins/common/nochatreports.mixins.json:common.MixinFriendlyByteBuf from mod nochatreports
+[14:03:30] [main/INFO]: Renaming synthetic method lambda$onReadJsonWithCodec$0(Ljava/lang/String;)Lio/netty/handler/codec/DecoderException; to mdd45112$nochatreports$lambda$onReadJsonWithCodec$0$1 in #nochatreports:mixins/common/nochatreports.mixins.json:common.MixinFriendlyByteBuf from mod nochatreports
+[14:03:35] [main/INFO]: Mixing server.MixinServerGamePacketListenerImpl from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_3244
+[14:03:37] [main/INFO]: [Quilt Command] Networking support is enabled
+[14:03:38] [main/INFO]: [voicechat] Compatibility version 18
+[14:03:38] [main/INFO]: [voicechat] Loading plugins
+[14:03:38] [main/INFO]: [voicechat] Loaded 1 plugin(s)
+[14:03:38] [main/INFO]: [voicechat] Initializing plugins
+[14:03:38] [main/INFO]: Initializing Simple Voice Chat integration
+[14:03:38] [main/INFO]: [voicechat] Initialized 1 plugin(s)
+[14:03:38] [main/INFO]: [voicechat] Registering events for 'sound_physics_remastered'
+[14:03:38] [main/WARN]: Assets URL 'quilt.zfs://minecraft-1.20.1.i0:0/assets/.mcassetsroot' uses unexpected schema
+[14:03:38] [main/WARN]: Assets URL 'quilt.zfs://minecraft-1.20.1.i0:0/data/.mcassetsroot' uses unexpected schema
+[14:03:38] [main/INFO]: ARRP register - before vanilla
+[14:03:38] [main/INFO]: ARRP register - after vanilla
+[14:03:38] [main/INFO]: ARRP register - before vanilla
+[14:03:38] [main/INFO]: ARRP register - after vanilla
+[14:03:39] [main/INFO]: Loading config SimpleCopperPipesConfig from simple_copper_pipes
+[14:03:39] [main/INFO]: Saving config SimpleCopperPipesConfig from simple_copper_pipes
+[14:03:39] [main/INFO]: Processing 4 KiwiModule annotations
+[14:03:39] [main/INFO]: Module [kiwi:contributors] initialized
+[14:03:39] [main/INFO]: Module [passablefoliage:core] initialized
+[14:03:39] [main/INFO]: Module [kiwi:data] initialized
+[14:03:39] [main/INFO]:     recipe_serializer: 3
+[14:03:39] [main/INFO]: Module [passablefoliage:enchantment] initialized
+[14:03:39] [main/INFO]:     enchantment: 1
+[14:03:39] [main/ERROR]: No data fixer registered for doapi:chair
+[14:03:39] [main/INFO]: Registered region minecraft:overworld to index 0 for type OVERWORLD
+[14:03:39] [main/INFO]: Registered region minecraft:nether to index 0 for type NETHER
+[14:03:39] [main/INFO]: Registered region riverredux:overworld to index 1 for type OVERWORLD
+[14:03:39] [main/INFO]: Registered region meadow:overworld to index 2 for type OVERWORLD
+[14:03:39] [main/ERROR]: No data fixer registered for meadow:brown_bear
+[14:03:39] [main/ERROR]: No data fixer registered for meadow:water_buffalo
+[14:03:39] [main/ERROR]: No data fixer registered for meadow:wooly_cow
+[14:03:40] [main/INFO]: Reflections took 44 ms to scan 1 urls, producing 1 keys and 1 values
+[14:03:40] [main/INFO]: Reflections took 3 ms to scan 1 urls, producing 1 keys and 1 values
+[14:03:40] [main/INFO]: Reflections took 2 ms to scan 1 urls, producing 1 keys and 3 values
+[14:03:40] [main/INFO]: Reflections took 2 ms to scan 1 urls, producing 1 keys and 3 values
+[14:03:40] [main/INFO]: Reflections took 3 ms to scan 1 urls, producing 1 keys and 2 values
+[14:03:40] [main/INFO]: Reflections took 3 ms to scan 1 urls, producing 1 keys and 2 values
+[14:03:40] [main/INFO]: Enabled 34 bug fixes: [MC-2025, MC-7569, MC-8187, MC-14923, MC-30391, MC-31819, MC-69216, MC-72151, MC-88371, MC-89146, MC-90084, MC-93018, MC-100991, MC-119417, MC-119754, MC-121706, MC-121903, MC-124117, MC-129909, MC-132878, MC-135971, MC-155509, MC-160095, MC-179072, MC-183990, MC-193343, MC-199467, MC-200418, MC-206922, MC-215530, MC-223153, MC-224729, MC-231743, MC-232869]
+[14:03:40] [main/INFO]: Successfully Debugify'd your game!
+[14:03:40] [main/INFO]: KONNICHIWA ZA WARUDO!
+[14:03:40] [main/INFO]: Default JVM text encoding is: UTF-8
+[14:03:40] [main/INFO]: Reading config file NoChatReports/NCR-Common.json...
+[14:03:40] [main/INFO]: Writing config file NoChatReports/NCR-Common.json...
+[14:03:40] [main/INFO]: Reflections took 2 ms to scan 1 urls, producing 1 keys and 1 values
+[14:03:40] [main/INFO]: Reflections took 2 ms to scan 1 urls, producing 1 keys and 1 values
+[14:03:40] [main/INFO]: Initialize mod Library Ferret
+[14:03:40] [main/INFO]: Initialized mod Library Ferret
+[14:03:40] [main/INFO]: Reflections took 1 ms to scan 1 urls, producing 1 keys and 2 values
+[14:03:40] [main/INFO]: Reflections took 2 ms to scan 1 urls, producing 1 keys and 2 values
+[14:03:40] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:pufferfish_bucket is now minecraft:bucket.
+[14:03:40] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:salmon_bucket is now minecraft:bucket.
+[14:03:40] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:cod_bucket is now minecraft:bucket.
+[14:03:40] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:tropical_fish_bucket is now minecraft:bucket.
+[14:03:40] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:axolotl_bucket is now minecraft:bucket.
+[14:03:40] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:powder_snow_bucket is now minecraft:bucket.
+[14:03:40] [main/INFO]: Fixing MC-151457. Crafting remainder for minecraft:tadpole_bucket is now minecraft:bucket.
+[14:03:40] [main/INFO]: Loading config FrozenLibConfig from frozenlib
+[14:03:40] [main/INFO]: Saving config FrozenLibConfig from frozenlib
+[14:03:40] [main/INFO]: Reflections took 2 ms to scan 1 urls, producing 1 keys and 2 values
+[14:03:40] [main/INFO]: Reflections took 1 ms to scan 1 urls, producing 1 keys and 2 values
+[14:03:40] [main/INFO]: Loaded maxhealthfix for Fabric.
+[14:03:40] [main/ERROR]: No data fixer registered for decorative_blocks:dummy
+[14:03:40] [main/INFO]: Reflections took 1 ms to scan 1 urls, producing 1 keys and 1 values
+[14:03:40] [main/INFO]: Reflections took 1 ms to scan 1 urls, producing 1 keys and 1 values
+[14:03:40] [main/INFO]: Reflections took 4 ms to scan 1 urls, producing 1 keys and 3 values
+[14:03:40] [main/INFO]: Reflections took 4 ms to scan 1 urls, producing 1 keys and 3 values
+[14:03:40] [main/INFO]: Reflections took 3 ms to scan 1 urls, producing 1 keys and 4 values
+[14:03:40] [main/INFO]: Reflections took 4 ms to scan 1 urls, producing 1 keys and 4 values
+[14:03:40] [main/INFO]: Initializing 'TCD Commons API' 3.5+fabric-1.20.1 as 'TCDCommonsServer'.
+[14:03:40] [main/INFO]: Initializing 'Better Statistics Screen' as 'BetterStatsServer'.
+[14:03:40] [main/WARN]: You specified a resource pack without providing a sha1 hash. Pack will be updated on the client only if you change the name of the pack.
+[14:03:40] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[14:03:40] [main/INFO]: ARRP register - before vanilla
+[14:03:40] [main/INFO]: ARRP register - after vanilla
+[14:03:40] [main/INFO]: ARRP register - before vanilla
+[14:03:40] [main/INFO]: ARRP register - after vanilla
+[14:03:40] [main/INFO]: ARRP register - before user
+[14:03:40] [main/INFO]: ARRP register - before vanilla
+[14:03:40] [main/INFO]: ARRP register - after vanilla
+[14:03:40] [main/INFO]: ARRP register - before vanilla
+[14:03:40] [main/INFO]: ARRP register - after vanilla
+[14:03:42] [main/INFO]: [fabric-registry-sync] Loaded registry data [file 1/4]
+[14:03:43] [main/INFO]: parsing loot tables
+[14:03:43] [main/INFO]: finished parsing loot tables
+[14:03:43] [main/INFO]: Registered 0 custom recipes.
+[14:03:43] [main/ERROR]: Parsing error loading recipe conditional:decorative_blocks/wood_cutter/pine_beam_woodcutter
 com.google.gson.JsonSyntaxException: No such item decorative_blocks:pine_beam
 	at net.satisfyu.meadow.recipes.woodcutting.WoodcuttingRecipe$Serializer.lambda$fromJson$0(WoodcuttingRecipe.java:108) ~[meadow-1.2.0.i0:0/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -347,10 +347,10 @@ com.google.gson.JsonSyntaxException: No such item decorative_blocks:pine_beam
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
 	at org.quiltmc.loader.impl.launch.server.QuiltServerLauncher.main(QuiltServerLauncher.java:66) ~[quilt-loader-0.23.1.jar:?]
-[21:19:48] [main/INFO]: Modified 0 recipes.
-[21:19:48] [main/INFO]: Removed 0 recipes.
-[21:19:48] [main/INFO]: Loaded 11 recipes
-[21:19:48] [main/ERROR]: Failed to load function watching:check
+[14:03:43] [main/INFO]: Modified 0 recipes.
+[14:03:43] [main/INFO]: Removed 0 recipes.
+[14:03:43] [main/INFO]: Loaded 11 recipes
+[14:03:43] [main/ERROR]: Failed to load function watching:check
 java.util.concurrent.CompletionException: java.lang.IllegalArgumentException: Whilst parsing command on line 1: Unknown or incomplete command, see below for error at position 0: <--[HERE]
 	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315) ~[?:?]
 	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320) ~[?:?]
@@ -366,69 +366,111 @@ Caused by: java.lang.IllegalArgumentException: Whilst parsing command on line 1:
 	at net.minecraft.class_5349.method_29451(class_5349.java:83) ~[minecraft-1.20.1.i0:0/:?]
 	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
 	... 6 more
-[21:19:48] [main/INFO]: Loaded 1689 advancements
-[21:19:51] [main/WARN]: Entry decorative_blocks:oak_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag minecraft:logs.
-[21:19:51] [main/WARN]: Entry decorative_blocks:birch_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag minecraft:logs.
-[21:19:51] [main/WARN]: Entry decorative_blocks:spruce_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag minecraft:logs.
-[21:19:51] [main/WARN]: Entry decorative_blocks:acacia_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag minecraft:logs.
-[21:19:51] [main/WARN]: Entry decorative_blocks:jungle_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag minecraft:logs.
-[21:19:51] [main/WARN]: Entry decorative_blocks:dark_oak_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag minecraft:logs.
-[21:19:51] [main/INFO]: Mixing server.MixinDedicatedServer from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_3176
-[21:19:51] [main/INFO]: Mixing server.MixinPlayerList from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_3324
-[21:19:52] [main/INFO]: Initialized TerraBlender biomes for level stem minecraft:overworld
-[21:19:52] [main/INFO]: Initialized TerraBlender biomes for level stem minecraft:the_nether
-[21:19:52] [main/INFO]: Applied 412 biome modifications to 157 of 169 new biomes in 50.13 ms
-[21:19:52] [Server thread/ERROR]: Registry 'copper_pipe:pipe_movement_restrictions' was empty after loading
-[21:19:52] [Server thread/INFO]: [Quilt DFU API] Serverside DataFixer Registry is about to freeze
-[21:19:52] [Server thread/INFO]: [Quilt DFU API] Serverside DataFixer Registry was frozen
-[21:19:52] [Server thread/INFO]: Starting minecraft server version 1.20.1
-[21:19:52] [Server thread/INFO]: Loading properties
-[21:19:52] [Server thread/INFO]: Default game type: SURVIVAL
-[21:19:52] [Server thread/INFO]: Generating keypair
-[21:19:52] [Server thread/INFO]: Starting Minecraft server on *:25565
-[21:19:52] [Server thread/INFO]: Using epoll channel type
-[21:19:52] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[21:19:52] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[21:19:52] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
-[21:19:52] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[21:19:52] [Server thread/INFO]: Preparing level "world"
-[21:19:55] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[21:19:59] [Worker-Main-6/INFO]: Preparing spawn area: 0%
-[21:19:59] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:19:59] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:19:59] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:19:59] [Worker-Main-6/INFO]: Preparing spawn area: 0%
-[21:19:59] [Worker-Main-6/INFO]: Preparing spawn area: 0%
-[21:19:59] [Worker-Main-6/INFO]: Preparing spawn area: 0%
-[21:19:59] [Worker-Main-6/INFO]: Preparing spawn area: 0%
-[21:19:59] [Worker-Main-7/INFO]: Preparing spawn area: 0%
-[21:19:59] [Worker-Main-6/INFO]: Preparing spawn area: 0%
-[21:20:00] [Worker-Main-5/INFO]: Preparing spawn area: 8%
-[21:20:00] [Worker-Main-3/INFO]: Preparing spawn area: 65%
-[21:20:01] [Server thread/INFO]: Time elapsed: 5828 ms
-[21:20:01] [Server thread/INFO]: Done (8.584s)! For help, type "help"
-[21:20:01] [Server thread/INFO]: Mixing common.MixinServerStatus from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_2926
-[21:20:01] [Server thread/WARN]: [voicechat] Running in offline mode - Voice chat encryption is not secure!
-[21:20:01] [VoiceChatServerThread/INFO]: [voicechat] Voice chat server started at port 53522
-[21:20:01] [Server thread/INFO]: Loaded values for 14 compatible attributes.
-[21:20:01] [Server thread/INFO]: Loaded 14 values from config.
-[21:20:01] [Server thread/INFO]: Saving config file. 14 entries.
-[21:20:01] [Server thread/INFO]: Applying changes for 14 attributes.
-[21:20:01] [Server thread/INFO]: Unknown or incomplete command, see below for error
-[21:20:01] [Server thread/INFO]: server-start<--[HERE]
-[21:20:41] [Server thread/INFO]: Unknown game mode: 1
-[21:20:41] [Server thread/INFO]: gamemode 1 aaaaa<--[HERE]
-[21:20:52] [Server thread/INFO]: No player was found
-[21:20:57] [Server thread/INFO]: Stopping the server
-[21:20:57] [Server thread/INFO]: Unknown or incomplete command, see below for error
-[21:20:57] [Server thread/INFO]: server-stop<--[HERE]
-[21:20:57] [Server thread/INFO]: Stopping server
-[21:20:57] [Server thread/INFO]: Saving players
-[21:20:57] [Server thread/INFO]: Saving worlds
-[21:20:58] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[21:20:58] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[21:20:58] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[21:20:58] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[21:20:58] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[21:20:58] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[21:20:58] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[14:03:43] [main/INFO]: Loaded 1689 advancements
+[14:03:46] [main/WARN]: Entry decorative_blocks:oak_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag decorative_blocks:beams_that_burn.
+[14:03:46] [main/WARN]: Entry decorative_blocks:birch_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag decorative_blocks:beams_that_burn.
+[14:03:46] [main/WARN]: Entry decorative_blocks:spruce_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag decorative_blocks:beams_that_burn.
+[14:03:46] [main/WARN]: Entry decorative_blocks:acacia_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag decorative_blocks:beams_that_burn.
+[14:03:46] [main/WARN]: Entry decorative_blocks:jungle_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag decorative_blocks:beams_that_burn.
+[14:03:46] [main/WARN]: Entry decorative_blocks:dark_oak_beam for registry minecraft:item already has attachment quilt:fuel_times defined. Overriding with value from tag decorative_blocks:beams_that_burn.
+[14:03:47] [main/INFO]: Mixing server.MixinDedicatedServer from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_3176
+[14:03:47] [main/INFO]: Mixing server.MixinPlayerList from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_3324
+[14:03:47] [main/INFO]: Initialized TerraBlender biomes for level stem minecraft:overworld
+[14:03:47] [main/INFO]: Initialized TerraBlender biomes for level stem minecraft:the_nether
+[14:03:47] [main/INFO]: Applied 412 biome modifications to 157 of 169 new biomes in 41.45 ms
+[14:03:47] [Server thread/ERROR]: Registry 'copper_pipe:pipe_movement_restrictions' was empty after loading
+[14:03:47] [Server thread/INFO]: [Quilt DFU API] Serverside DataFixer Registry is about to freeze
+[14:03:47] [Server thread/INFO]: [Quilt DFU API] Serverside DataFixer Registry was frozen
+[14:03:47] [Server thread/INFO]: Starting minecraft server version 1.20.1
+[14:03:47] [Server thread/INFO]: Loading properties
+[14:03:47] [Server thread/INFO]: Default game type: SURVIVAL
+[14:03:47] [Server thread/INFO]: Generating keypair
+[14:03:47] [Server thread/INFO]: Starting Minecraft server on *:25565
+[14:03:47] [Server thread/INFO]: Using epoll channel type
+[14:03:47] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[14:03:47] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[14:03:47] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[14:03:47] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[14:03:47] [Server thread/INFO]: Preparing level "world"
+[14:03:50] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[14:03:56] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[14:03:56] [Worker-Main-2/INFO]: Preparing spawn area: 6%
+[14:03:57] [Worker-Main-2/INFO]: Preparing spawn area: 72%
+[14:03:57] [Server thread/INFO]: Time elapsed: 6707 ms
+[14:03:57] [Server thread/INFO]: Done (9.742s)! For help, type "help"
+[14:03:57] [Server thread/INFO]: Mixing common.MixinServerStatus from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_2926
+[14:03:57] [Server thread/WARN]: [voicechat] Running in offline mode - Voice chat encryption is not secure!
+[14:03:57] [VoiceChatServerThread/INFO]: [voicechat] Voice chat server started at port 53522
+[14:03:57] [Server thread/INFO]: Loaded values for 14 compatible attributes.
+[14:03:57] [Server thread/INFO]: Loaded 14 values from config.
+[14:03:57] [Server thread/INFO]: Saving config file. 14 entries.
+[14:03:57] [Server thread/INFO]: Applying changes for 14 attributes.
+[14:04:05] [Netty Epoll Server IO #1/INFO]: Mixing server.MixinServerboundChatCommandPacket from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_7472
+[14:04:05] [Netty Epoll Server IO #1/INFO]: Mixing server.MixinServerboundChatPacket from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_2797
+[14:04:05] [Netty Epoll Server IO #1/INFO]: Mixing server.MixinServerboundChatSessionUpdatePacket from #nochatreports:mixins/common/nochatreports.mixins.json into net.minecraft.class_7861
+[14:08:18] [Server thread/INFO]: Misiek[/127.190.32.125:56299] logged in with entity id 52 at (116.45239684585816, 66.0, 344.9288866979863)
+[14:08:18] [Server thread/INFO]: [voicechat] Using Fabric Permissions API
+[14:08:18] [Server thread/INFO]: Misiek joined the game
+[14:08:20] [Server thread/INFO]: [voicechat] Received secret request of Misiek (18)
+[14:08:20] [Server thread/INFO]: [voicechat] Sent secret to Misiek
+[14:44:07] [Server thread/INFO]: BolekB[/127.149.52.233:34459] logged in with entity id 9359 at (404.33238480319835, 173.25, -641.0243326741745)
+[14:44:08] [Server thread/INFO]: BolekB joined the game
+[14:44:08] [Server thread/INFO]: [voicechat] Received secret request of BolekB (18)
+[14:44:08] [Server thread/INFO]: [voicechat] Sent secret to BolekB
+[14:44:13] [Server thread/INFO]: <Misiek> DC?
+[14:44:16] [Server thread/INFO]: <BolekB> nom
+[14:49:17] [Server thread/WARN]: Mismatch in destroy block pos: class_2338{x=173, y=67, z=303} class_2338{x=174, y=66, z=303}
+[14:49:17] [Server thread/WARN]: Mismatch in destroy block pos: class_2338{x=173, y=67, z=303} class_2338{x=174, y=66, z=303}
+[14:49:17] [Server thread/WARN]: Mismatch in destroy block pos: class_2338{x=173, y=67, z=303} class_2338{x=174, y=66, z=303}
+[14:49:17] [Server thread/WARN]: Mismatch in destroy block pos: class_2338{x=173, y=67, z=303} class_2338{x=174, y=66, z=303}
+[14:49:17] [Server thread/WARN]: Mismatch in destroy block pos: class_2338{x=173, y=67, z=303} class_2338{x=174, y=66, z=303}
+[14:49:17] [Server thread/WARN]: Mismatch in destroy block pos: class_2338{x=173, y=67, z=303} class_2338{x=174, y=66, z=303}
+[14:49:18] [Server thread/WARN]: Mismatch in destroy block pos: class_2338{x=173, y=67, z=303} class_2338{x=174, y=66, z=303}
+[14:49:19] [Server thread/WARN]: Mismatch in destroy block pos: class_2338{x=174, y=67, z=301} class_2338{x=175, y=66, z=302}
+[14:49:20] [Server thread/WARN]: Mismatch in destroy block pos: class_2338{x=174, y=68, z=303} class_2338{x=175, y=66, z=302}
+[15:00:24] [Server thread/INFO]: BolekB lost connection: Disconnected
+[15:00:24] [Server thread/INFO]: BolekB left the game
+[15:00:24] [Server thread/INFO]: [voicechat] Disconnecting client BolekB
+[15:00:24] [Server thread/WARN]: handleDisconnection() called twice
+[15:01:02] [Server thread/INFO]: BolekB[/127.149.52.233:44637] logged in with entity id 17042 at (403.5, 173.25, -638.5)
+[15:01:02] [Server thread/INFO]: BolekB joined the game
+[15:01:03] [Server thread/INFO]: [voicechat] Received secret request of BolekB (18)
+[15:01:03] [Server thread/INFO]: [voicechat] Sent secret to BolekB
+[15:10:12] [Server thread/INFO]: BolekB lost connection: Disconnected
+[15:10:12] [Server thread/INFO]: BolekB left the game
+[15:10:12] [Server thread/INFO]: [voicechat] Disconnecting client BolekB
+[15:12:47] [Server thread/INFO]: BolekB[/127.149.52.233:38545] logged in with entity id 21978 at (408.1777180361616, 174.875, -642.4163637029892)
+[15:12:47] [Server thread/INFO]: BolekB joined the game
+[15:12:47] [Server thread/INFO]: [voicechat] Received secret request of BolekB (18)
+[15:12:47] [Server thread/INFO]: [voicechat] Sent secret to BolekB
+[15:14:19] [Server thread/INFO]: Misiek has made the advancement [When in Rome]
+[15:21:41] [Server thread/INFO]: Misiek lost connection: Disconnected
+[15:21:41] [Server thread/INFO]: Misiek left the game
+[15:21:41] [Server thread/INFO]: [voicechat] Disconnecting client Misiek
+[15:24:24] [Server thread/INFO]: BolekB lost connection: Disconnected
+[15:24:24] [Server thread/INFO]: BolekB left the game
+[15:24:24] [Server thread/INFO]: [voicechat] Disconnecting client BolekB
+[15:30:31] [Server thread/INFO]: Stopping the server
+[15:30:31] [Server thread/INFO]: Unknown or incomplete command, see below for error
+[15:30:31] [Server thread/INFO]: server-stop<--[HERE]
+[15:30:31] [Server thread/INFO]: Stopping server
+[15:30:31] [Server thread/INFO]: Saving players
+[15:30:31] [Server thread/INFO]: Saving worlds
+[15:30:31] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[15:30:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[15:30:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[15:30:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[15:30:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[15:30:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[15:30:32] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved

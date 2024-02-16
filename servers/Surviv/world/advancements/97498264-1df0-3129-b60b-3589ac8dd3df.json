@@ -38,6 +38,7 @@
       "minecraft:lush_caves": "2024-02-11 15:11:56 +0100",
       "minecraft:deep_cold_ocean": "2024-02-10 22:34:01 +0100",
       "minecraft:frozen_ocean": "2024-02-09 21:15:03 +0100",
+      "minecraft:deep_frozen_ocean": "2024-02-16 14:19:30 +0100",
       "minecraft:ocean": "2024-02-10 22:32:02 +0100",
       "minecraft:jungle": "2024-02-13 16:11:34 +0100",
       "minecraft:snowy_beach": "2024-02-09 21:11:05 +0100",
@@ -3436,6 +3437,66 @@
   "minecraft:husbandry/tadpole_in_a_bucket": {
     "criteria": {
       "tadpole_bucket": "2024-02-14 16:08:21 +0100"
+    },
+    "done": true
+  },
+  "decorative_blocks:recipes/building_blocks/birch_beam": {
+    "criteria": {
+      "has_stripped_log": "2024-02-16 14:14:20 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stripped_birch_wood": {
+    "criteria": {
+      "has_log": "2024-02-16 14:14:20 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/birch_hanging_sign": {
+    "criteria": {
+      "has_stripped_logs": "2024-02-16 14:14:20 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/lead": {
+    "criteria": {
+      "has_slime_ball": "2024-02-16 14:27:03 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/cyan_glazed_terracotta": {
+    "criteria": {
+      "has_cyan_terracotta": "2024-02-16 15:15:23 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/sticky_piston": {
+    "criteria": {
+      "has_slime_ball": "2024-02-16 14:27:03 +0100"
+    },
+    "done": true
+  },
+  "betterdungeons:zombie_dungeon": {
+    "criteria": {
+      "in_better_zombie_dungeon": "2024-02-16 15:14:19 +0100"
+    },
+    "done": true
+  },
+  "betterdungeons:all_dungeons": {
+    "criteria": {
+      "in_better_zombie_dungeon": "2024-02-16 15:14:19 +0100"
+    },
+    "done": false
+  },
+  "minecraft:recipes/redstone/slime_block": {
+    "criteria": {
+      "has_slime_ball": "2024-02-16 14:27:03 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/grindstone": {
+    "criteria": {
+      "has_stone_slab": "2024-02-16 14:50:11 +0100"
     },
     "done": true
   },

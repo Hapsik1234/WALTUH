@@ -33,34 +33,60 @@ class Server {
     this.cmd = spawn("sudo bash", [""], { shell: true });
 
     ServerInstance(this);
+
+    // Handle events from cmd
+
+    // Handle data from minecraft server
+    this.cmd.stdout.on('data', (data) => {
+
+      console.log(color.green, `[Minecraft] ${data}`);  // Printing the data
+      
+      // Handle server full start
+      if (data.toString().includes("Done")) {
+        console.log(color.green, "Server successfully started!");
+        this.changeState("on");
+      }
+
+      // Handle server full stop
+      if (data.toString().includes(pass)) { 
+        console.log(color.green, "Server stopped.");
+        this.changeState("off");
+      }
+
+    });
+      
+    // Handle errors from minecraft server
+    this.cmd.stderr.on('data', (data) => {
+      console.error(`[Error] ${data}`);
+    });
+
+    // Handle stop of cmd session
+    this.cmd.on('close', (code) => { 
+      console.log(color.red, `Cmd unexpectedly closed with code: ${code}`);
+      this.changeState("off")
+
+      if (this.cmd) this.cmd.kill(); // // Do not uncomment
+    });
+
   }
 
   changeState(state) {
     this.state = state;
     io.emit('srvstchange', this.state, this.name);
   }
+
+
 }
 
-//Fun = new Server(Fun, "4fun");
+
 Surviv = new Server("Surviv", "Surviv");
 //Fun = new Server("Fun", "Fun")
-
-//import { get } from 'http';
 
 // const getDirectories = source =>
 //   console.log(fs.readdirSync(source, { withFileTypes: true })
 //     .filter(dirent => dirent.isDirectory()))
 
 // getDirectories(const_path_to_mcserver);
-
-// var cmd;
-
-// cmd = spawn("cmd.exe", [""], { shell: true });
-
-// var cmd;
-// cmd.on("close", (code) => {
-//   console.log("Closed")
-// });
 
 function ServerInstance(ServerObject) {
   io.on("connection", socket => {
@@ -81,88 +107,45 @@ function ServerInstance(ServerObject) {
       requestHandler("command", request, ServerObject, server);
     });
 
-
-
-
-    /* 
-      CMD HANDLER
-    */
-    ServerObject.cmd.stdout.on('data', (data) => { // Handle data from minecraft server
-
-      console.log(color.green, `[Minecraft] ${data}`);  // Printing the data
-      
-      if (data.toString().includes("Done")) { // Handle server fully started
-        console.log("Server successfully started!");
-        ServerObject.changeState("on");
-      }
-
-      if (data.toString().includes(pass)) { // Handle server fully stopped
-        console.log("Server stopped.");
-        ServerObject.changeState("off");
-      }
-
-    });
-      
-    ServerObject.cmd.stderr.on('data', (data) => { // Handle errors from minecraft server
-      console.error(`[Error] ${data}`);
-    });
-    
-    ServerObject.cmd.on('close', (code) => { // Handle stop of cmd session
-      console.log('',`Cmd unexpectedly closed with code: ${code}`);
-      ServerObject.changeState("off")
-
-      if (ServerObject.cmd) ServerObject.cmd.kill(); // // Do not uncomment
-    });
-
-    /*
-      End of CMD HANDLER 
-    */
   });
 }
 
-function requestHandler(type, request, server, serverName){
+function requestHandler(type, request, server, serverName) {
   console.log("Received: " + type +  " " + request + " " + server)
 
-  //TODO: 
-switch(type)
-{
-case "request":
-  if (server.name == serverName)
-  switch(request) {
-    case "server-start":
-      if (server.state=="off") {
-        server.changeState("starting")
-        console.log("Starting server");
+  switch(type) {
+    // Start or stop request
+    case "request":
+      if (server.name == serverName)
+      switch(request) {
+        case "server-start":
 
-        // Starting minecraft server
+          if (server.state=="off") {
+            server.changeState("starting")
+            console.log("Starting server");
 
-        //cmd.emit
-        server.cmd.stdin.write("cd "+ const_path_to_mcserver + "/"+ server.name + " && sudo bash run.sh\n");
-        //cmd = new spawn(command, args, { shell: true });
+            // Starting minecraft server
+
+            server.cmd.stdin.write("cd "+ const_path_to_mcserver + "/"+ server.name + " && sudo bash run.sh\n");
+          }
+        
+        break;
+          
+        case "server-stop":
+          console.log("Stopping server");
+          // Zmiana stanu serwera przed zatrzymaniem go jest celowa, bo inaczej masz remote code execution ze strony internetowej
+
+          // Stoping minecraft server
+          server.cmd.stdin.write('stop\n');
+          
+        break;
       }
-    
-    break;
-      
-    case "server-stop":
-
-      // Stoping minecraft server
-
-      server.changeState("off");
-      //Zmiana stanu serwera przed zatrzymaniem go jest celowa, bo inaczej masz remote code execution ze strony internetowej
-      server.cmd.stdin.write('stop\n');
-
-      console.log("Stopping server");
-      
-
+    // Command request
+    case "command":
+    if (server.state=="on")
+      server.cmd.stdin.write(request + '\n');
     break;
   }
-  case "command":
-   if (server.state== "on"){
-      server.cmd.stdin.write(request + '\n');
-   }
-
-  break;
- }
 }
 
 
