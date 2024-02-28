@@ -1,10 +1,7 @@
 // address and port of websocket server
 
-const const_address = "http://method-tries.gl.at.ply.gg"     // At production: http://instead-former.at.ply.gg
-const const_server_port = 19311          // At production: 4073
-
-
-
+const const_address = "http://instead-former.at.ply.gg"     // At production: http://instead-former.at.ply.gg
+const const_server_port = 4073         // At production: 4073
 
 // Sounds that will be played after minecraft server startup
 
@@ -38,7 +35,7 @@ function playsound() {
 
 // Popup function
 
-function popup(type, text, title=null) {    // type - type of popup: 1 - Error, 2 - Warning, 3 - Success; text - the contetnt of message; title - title of popup, "Błąd!", "Ostrzeżenie!" or "Sukces!" by deafult
+function popup(type, text, title=null) {    // type - type of popup: 1 - Error, 2 - Warning, 3 - Success; text - the content of message; title - title of popup, "Błąd!", "Ostrzeżenie!" or "Sukces!" by deafult
     var color;
     if (type <= 3 && type > 0) {    // Checking for type of popup validation
         switch(type) {
@@ -69,7 +66,7 @@ function popup(type, text, title=null) {    // type - type of popup: 1 - Error, 
         newPopup.className = 'popup'; // Apply styles for the popup
         newPopup.style.backgroundColor = color;
         newPopup.innerHTML = `
-            <span class="popup-inner close" style="margin-left: 100%; cursor: pointer; font-size: 30px">&times;</span>
+            <span class="popup-inner close" style="float: right; cursor: pointer; font-size: 30px;">&times;</span>
             <p class="popup-inner">${title}</p>
             <p class="popup-inner">${text}</p>
         `;
@@ -101,9 +98,9 @@ try {
     srvstart.addEventListener("click", element => {
         console.log("Request sent")
         if (srvstart.name=="start") {
-            socket.emit('request', "server-start");
+            socket.emit('request', "server-start", ServerInstance);
         } else {
-            socket.emit('request', "server-stop");
+            socket.emit('request', "server-stop", ServerInstance);
         }
     })
 

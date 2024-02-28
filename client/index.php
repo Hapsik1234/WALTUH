@@ -1,6 +1,6 @@
 <?php
-	$const_ip = "method-tries.gl.at.ply.gg";	//Twoje ip instead-former.at.ply.gg
-	$const_server_port = "19311";	//Port od gniazda sieciowego (zobacz server.js)
+	$const_ip = "instead-former.at.ply.gg";	//Twoje ip instead-former.at.ply.gg
+	$const_server_port = "4073";	//Port od gniazda sieciowego (zobacz server.js)
 	$key = "oJD8XtaeBQrsprQ0eVareQ";
 
 	header('Access-Control-Allow-Origin: https://4fun-server.glitch.me');
@@ -21,8 +21,8 @@
 			//echo("No auth");
 		}
 	}
-
-	authcheck($key);	//Uncomment for service work
+	// authcheck($key);	//Uncomment for service work
+	
 ?>
 
 <html> 
@@ -34,14 +34,37 @@
 		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600;800&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
-		<?php
-			
-			echo('<script defer src="http://'.$const_ip.':'.$const_server_port.'/socket.io/socket.io.js"></script>');
-		?>
 		<!--script defer type="module" src="http://localhost:8080/mcserver/client/node_modules/socket.io-client/build/esm/index.js"></script!-->
 		<script type="text/javascript" src="src/script.js"></script>
-		<script defer src="src/client.js"></script>
+
+		<?php
+			echo('<script defer src="http://'.$const_ip.':'.$const_server_port.'/socket.io/socket.io.js"></script>');
+		?>
+		<script defer src="src/client.js" type="module"></script>
 		<title>4Fun Server</title>
+		<?php
+		function chooseServer()
+		{
+			if(isset($_GET['server']))
+			{
+				$server = $_GET['server'];
+				echo("<script>
+				var ServerInstance = '$server';
+				console.log(ServerInstance);
+				//alert('.$server.');
+				</script>");
+			}
+			else
+			{
+				header("Location: error.php");
+				exit();
+			}
+	
+		}
+			chooseServer();
+			
+		?>
+
 	</head>
 	<body>
 		<div id="christmas"></div>

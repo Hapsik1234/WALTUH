@@ -148,12 +148,13 @@ body {
 	display: block;
 	height: auto;
 	padding: 5px;
-	margin-top: 10px;
+	margin-bottom: 15px;
 	background-color: #ff6666;
 	padding: 15px;
     border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	pointer-events: all;
+	margin-right: 10px;
 }
 
 #tower-of-piza {
@@ -165,7 +166,7 @@ body {
 }
 
 .popup-inner {
-	margin-top: 0px;
+	margin-top: 20px;
 	display: block;
 }
 
