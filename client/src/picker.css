@@ -1,0 +1,73 @@
+#server_list_container
+{
+	width: 1040px;
+	display: flex;
+	flex-direction: row;
+	/* height: 200px; */
+	margin-left: auto;
+    margin-right: auto;
+	flex-wrap: wrap;
+}
+
+.server_element
+{
+	width: 420px;
+	height: 115px;
+	background-color: #83838d;
+	margin: 15px 50px;
+	border-radius: 5px;
+	text-align: left;
+}
+
+.server_name
+{
+	margin: 10px 15px 0px 15px !important;
+	font-weight: 600;
+}
+
+.server_properties
+{
+	margin: 20px 28px !important;
+}
+
+.server_status_indicator_on
+{
+	float: right;
+	background-color: rgb(255, 255, 255);
+	border-radius: 50%;
+	height: 15px;
+	width: 15px;
+	margin-right: 30px;
+	margin-top: -70px;
+	border-color: rgb(16, 180, 16);
+	border-width: 20px;
+	border-style: solid;
+}
+
+.server_status_indicator_off
+{
+	float: right;
+	background-color: rgb(255, 255, 255);
+	border-radius: 50%;
+	height: 15px;
+	width: 15px;
+	margin-right: 30px;
+	margin-top: -70px;
+	border-color: rgb(180, 16, 16);
+	border-width: 20px;
+	border-style: solid;
+}
+
+.server_status_indicator_starting
+{
+	float: right;
+	background-color: rgb(255, 255, 255);
+	border-radius: 50%;
+	height: 15px;
+	width: 15px;
+	margin-right: 30px;
+	margin-top: -70px;
+	border-color: rgb(255, 145, 0);
+	border-width: 20px;
+	border-style: solid;
+}

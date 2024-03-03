@@ -1,8 +1,9 @@
 // address and port of websocket server
 
-const const_address = "http://instead-former.at.ply.gg"     // At production: http://instead-former.at.ply.gg
-const const_server_port = 4073         // At production: 4073
+const const_address = "localhost"     // At production: http://instead-former.at.ply.gg
+const const_server_port = 3000         // At production: 4073 // Why is this different for prod and dev?
 
+var globalPopupId = 1;
 // Sounds that will be played after minecraft server startup
 
 var rickroll = new Audio("assets/rickroll.mp3");
@@ -24,6 +25,72 @@ var globsrvst=0;
 var lastglobsrvst=0;
 
 
+// Popup class
+class popup
+{
+    id = 1;
+    color;
+    constructor(type, text, title=null)// type - type of popup: 1 - Error, 2 - Warning, 3 - Success; text - the content of message; title - title of popup, "Błąd!", "Ostrzeżenie!" or "Sukces!" by deafult
+    {
+        this.id = 1;
+        console.log("Creating popup " + this.id);
+        globalPopupId++;
+
+        if (type <= 3 && type > 0) {    // Checking for type of popup validation
+            switch(type) {
+                case 1:
+                    this.color = "#ff6666";
+                    if (!title) {
+                        title = "Błąd!";
+                    }
+                    break
+                case 2:
+                    this.color = "#e6ac0c";
+                    if (!title) {
+                        title = "Ostrzeżenie!";
+                    }
+                    break
+                case 3:
+                    this.color = "#19dd19";
+                    if (!title) {
+                        title = "Sukces!";
+                    }
+                    break
+            }
+    
+            // Creating new popup element
+    
+            var newPopup = document.createElement('div');
+    
+            newPopup.className = 'popup'; // Apply styles for the popup
+            newPopup.setAttribute('id', `popup_`+this.id);
+            console.log("Id of popup " + this.id)
+            newPopup.style.backgroundColor = this.color;
+            newPopup.innerHTML = `
+                <span class="popup-inner close" style="float: right; cursor: pointer; font-size: 30px;">&times;</span>
+                <p class="popup-inner">${title}</p>
+                <p class="popup-inner">${text}</p>
+            `;
+            // Append popup
+            var popupcontainer = document.getElementById("popup-container");
+            popupcontainer.appendChild(newPopup);
+
+
+            setTimeout(this.removePopup, 10000, this.id); //automatically remove popup to reduce popupspam when indev
+            return 0;
+    
+        } else {    // Returning 1 in case of wrong parameters
+            console.error("Wrong popup parameters");
+            return 1;
+        }
+    }
+    removePopup(id)
+    {
+        console.log("removing popup " + `popup_${id}`);
+        console.log(globalPopupId)
+        document.getElementById(`popup_${id}`).remove();
+    }
+}
 
 // Play random sound
 
@@ -32,59 +99,6 @@ function playsound() {
     console.log(random.toString() + ' ' + (audio.length-1).toString())
     audio[random].play();
 }
-
-// Popup function
-
-function popup(type, text, title=null) {    // type - type of popup: 1 - Error, 2 - Warning, 3 - Success; text - the content of message; title - title of popup, "Błąd!", "Ostrzeżenie!" or "Sukces!" by deafult
-    var color;
-    if (type <= 3 && type > 0) {    // Checking for type of popup validation
-        switch(type) {
-            case 1:
-                color = "#ff6666";
-                if (!title) {
-                    title = "Błąd!";
-                }
-                break
-            case 2:
-                color = "#e6ac0c";
-                if (!title) {
-                    title = "Ostrzeżenie!";
-                }
-                break
-            case 3:
-                color = "#19dd19";
-                if (!title) {
-                    title = "Sukces!";
-                }
-                break
-        }
-
-        // Creating new popup element
-
-        var newPopup = document.createElement('div');
-
-        newPopup.className = 'popup'; // Apply styles for the popup
-        newPopup.style.backgroundColor = color;
-        newPopup.innerHTML = `
-            <span class="popup-inner close" style="float: right; cursor: pointer; font-size: 30px;">&times;</span>
-            <p class="popup-inner">${title}</p>
-            <p class="popup-inner">${text}</p>
-        `;
-
-
-        // Append popup
-
-        var popupcontainer = document.getElementById("popup-container");
-
-        popupcontainer.appendChild(newPopup);
-
-        return 0;
-
-    } else {    // Returning 1 in case of wrong parameters
-        return 1;
-    }
-}
-
 
 try {
 
@@ -143,7 +157,7 @@ try {
                 srvstart.classList.add("on")
                 if (globsrvst!==2) {
                     playsound();
-                    popup(3, "Serwer minecraft forfan został poprawnie uruchomiony. Dziękujemy za skorzystanie z usług <s>mojego</s> naszego systemu WALTUH (Wireless Acurate Lovely Turning out Usage to mc server Host).")
+                    new popup(3, "Serwer minecraft forfan został poprawnie uruchomiony. Dziękujemy za skorzystanie z usług <s>mojego</s> naszego systemu WALTUH (Wireless Acurate Lovely Turning out Usage to mc server Host).")
                 }
                 globsrvst=2;
             break;
@@ -155,7 +169,7 @@ try {
 
     socket.on('disconnect', (reason) => {
         console.error('Socket disconnected:', reason);
-        popup(1, "Zakończono połączenie z serwerem niepowodzeniem.");
+        new popup(1, "Zakończono połączenie z serwerem niepowodzeniem.");
 
         // The button
 
@@ -172,10 +186,10 @@ try {
     // Connection to web socket
 
     socket.on("connect", (con) => {
-        popup(3, "Nawiązano połączenie z serwerem.")
+        new popup(3, "Nawiązano połączenie z serwerem.")
     });
 
 } catch(error) {
-    popup(1, "Nie udało się połączyć z serwerem. Przepraszamy za wszelkie niedogodnośći, prosimy aby spróbować ponownie. Jeżeli to nie zadziała połącz się z administratorami sieci WALTUH.");
+    new popup(1, "Nie udało się połączyć z serwerem. Przepraszamy za wszelkie niedogodnośći, prosimy aby spróbować ponownie. Jeżeli to nie zadziała połącz się z administratorami sieci WALTUH.");
     console.error("Connection with websocket failed with error: " + error);
 }

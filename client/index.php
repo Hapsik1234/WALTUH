@@ -1,6 +1,6 @@
 <?php
-	$const_ip = "instead-former.at.ply.gg";	//Twoje ip instead-former.at.ply.gg
-	$const_server_port = "4073";	//Port od gniazda sieciowego (zobacz server.js)
+	$const_ip = "localhost";	//Twoje ip instead-former.at.ply.gg
+	$const_server_port = "3000";	//Port od gniazda sieciowego (zobacz server.js)
 	$key = "oJD8XtaeBQrsprQ0eVareQ";
 
 	header('Access-Control-Allow-Origin: https://4fun-server.glitch.me');
@@ -40,7 +40,7 @@
 		<?php
 			echo('<script defer src="http://'.$const_ip.':'.$const_server_port.'/socket.io/socket.io.js"></script>');
 		?>
-		<script defer src="src/client.js" type="module"></script>
+		<script defer src="src/client.js" type="module"></script>	
 		<title>4Fun Server</title>
 		<?php
 		function chooseServer()
@@ -51,7 +51,6 @@
 				echo("<script>
 				var ServerInstance = '$server';
 				console.log(ServerInstance);
-				//alert('.$server.');
 				</script>");
 			}
 			else
@@ -67,7 +66,7 @@
 
 	</head>
 	<body>
-		<div id="christmas"></div>
+		<!-- <div id="christmas"></div> -->
 		<div id="tower-of-piza">
 			<div id="popup-container">
 			</div>
@@ -82,17 +81,44 @@
 			<span class="separator"></span> 
 			<a href="#" id="goperformance">Wydajność</a>
 			<span class="separator"></span> 
+			<a href="#" id="goservers">Serwery</a>
 		</div>
+		<div class="main_content">
 			<div id="content">
 
-			<div id="svstate">
-				Stan serwera: Nie można nawiązać połączenia z serwerem.
-			</div>
+				<div id="svstate">
+					Stan serwera: Nie można nawiązać połączenia z serwerem.
+				</div>
 
-			<button class="button power" value="Start" type="button" name="" id="serverpowerst">
-				Błąd
-			</button>
+				<button class="button power" value="Start" type="button" name="" id="serverpowerst">
+					Błąd
+				</button>
 			</div>
+			<div class="moar_content">
+				<div class="textbox">
+					<span>Lorem ipsum</span>
+				</div>
+
+				<div class="additional">
+
+					<div class="text_element">
+						<span class="box_title">Address</span><br>
+						<span class="box_text">minecraft.4fun.freeddns.org:53522</span>
+					</div>
+
+					<div class="text_element">
+						<span class="box_title">Version</span><br>
+						<span class="box_text">1.20.1</span>
+					</div>
+
+					<div class="text_element">
+						<span class="box_title">Engine</span><br>
+						<span class="box_text">Fabric</span>
+					</div>
+
+				</div>
+			</div>	
+		</div>
 	</body>
 </html>
 

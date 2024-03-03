@@ -1,3 +1,4 @@
+const date = new Date();
 // Slide the content div into place
 
 function fitMargin(element, pixels) {
@@ -5,12 +6,14 @@ function fitMargin(element, pixels) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  var div1 = document.getElementById("content");
-  fitMargin(div1, 50);
 
-  var id = loadsnow();
+  console.log(date.getMonth());
+  if(date.getMonth() == 11) { //snow works only from december to june  || date.getMonth()<6
+      var id = loadsnow();
+      console.log("Ładowanie śniegu");
 
-  setTimeout(function() {removesnow(id)}, 8000);
+    setTimeout(function() {removesnow(id)}, 8000);
+  }
 });
 
 // Make the closing buttons close popups
@@ -24,12 +27,12 @@ document.addEventListener("click", function(event) {
 //(Christmas update) Snow gif
 
 function loadsnow() {
-  var gif = document.createElement('div')
-  gif.id = "snow";
+    var gif = document.createElement('div')
+    gif.id = "snow";
 
-  document.body.insertBefore(gif, document.body.firstChild);
+    document.body.insertBefore(gif, document.body.ariaValueMin);
 
-  return gif.id;
+    return gif.id;
 }
 
 function removesnow(id) {
