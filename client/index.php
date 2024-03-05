@@ -55,7 +55,7 @@
 			}
 			else
 			{
-				header("Location: error.php");
+				header("Location: picker.php");
 				exit();
 			}
 	
@@ -82,7 +82,18 @@
 			<a href="#" id="goperformance">Wydajność</a>
 			<span class="separator"></span> 
 			<a href="#" id="goservers">Serwery</a>
-		</div>
+			<div id="indicator">
+				<!-- <div id="indicator_off">
+					a
+				</div>
+				<div id="indicator_connecting">
+					a
+				</div>
+				<div id="indicator_on">
+					a
+				</div> -->
+			</div>
+	</div>
 		<div class="main_content">
 			<div id="content">
 

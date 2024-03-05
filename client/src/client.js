@@ -62,7 +62,16 @@ class popup
     
             var newPopup = document.createElement('div');
     
-            newPopup.className = 'popup'; // Apply styles for the popup
+            var list = newPopup.classList;
+
+            list.add("popup");
+            setTimeout(function(animate)
+            {
+              animate.add("animation");
+            }, 500, list
+            );
+            // newPopup.className = 'popup'; // Apply styles for the popup
+            // newPopup.class
             newPopup.setAttribute('id', `popup_`+this.id);
             console.log("Id of popup " + this.id)
             newPopup.style.backgroundColor = this.color;
@@ -75,8 +84,14 @@ class popup
             var popupcontainer = document.getElementById("popup-container");
             popupcontainer.appendChild(newPopup);
 
+            document.getElementById(`popup_${this.id}`).addEventListener("click", () => {this.removePopup(this.id, list);} )
+            // function(){
+            //     this.removePopup(this.id, list);
+            // });
 
-            setTimeout(this.removePopup, 10000, this.id); //automatically remove popup to reduce popupspam when indev
+            
+
+            setTimeout(this.removePopup, 9500, this.id, list); //automatically remove popup to reduce popupspam when indev
             return 0;
     
         } else {    // Returning 1 in case of wrong parameters
@@ -84,12 +99,16 @@ class popup
             return 1;
         }
     }
-    removePopup(id)
+    removePopup(id, animate)
     {
-        console.log("removing popup " + `popup_${id}`);
-        console.log(globalPopupId)
-        document.getElementById(`popup_${id}`).remove();
+        animate.remove("animation");
+        setTimeout(function(identificator){
+            console.log("removing popup " + `popup_${identificator}`);
+            document.getElementById(`popup_${identificator}`).remove();
+        }, 500, id);
+        
     }
+
 }
 
 // Play random sound

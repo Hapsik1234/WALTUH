@@ -57,14 +57,14 @@ body {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	
-	transition: background-color 0.5s ease;
+	transition: background-color 0.2s ease;
 	border: 0px solid #000000;
 	margin-top: 25px;
 	border-radius: 15px;
 }
 
 .button:hover {
-	transition: background-color 0.5s ease;
+	transition: background-color 0.2s ease;
 	cursor: pointer;
 	
 }
@@ -83,6 +83,14 @@ body {
 
 .on:hover {
 	background-color: #ea1235;
+}
+
+.indicator
+{
+	border-radius: 50px;
+	background-color: #ffffff;
+	float: left !important;
+	color: #ffffff !important;
 }
 
 #svstate {
@@ -242,6 +250,13 @@ body {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	pointer-events: all;
 	margin-right: 10px;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.animation
+{
+	opacity: 1 !important;
 }
 
 #tower-of-piza {

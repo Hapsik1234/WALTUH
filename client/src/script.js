@@ -16,13 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Make the closing buttons close popups
-
-document.addEventListener("click", function(event) {
-  if (event.target.classList.contains("close")) {
-    event.target.parentElement.remove();
-  }
-});
 
 //(Christmas update) Snow gif
 
