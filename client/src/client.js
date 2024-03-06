@@ -14,6 +14,15 @@ var sfx = new Audio("assets/sfx.mp3");
 
 var audio = [rickroll, notification, balls, calgon, sfx]
 
+
+//define state indicators
+var state_on = document.getElementById("indicator_on").classList;
+var state_connecting = document.getElementById("indicator_connecting").classList;
+var state_off = document.getElementById("indicator_off").classList;
+
+//default state
+state_connecting.add("enabled"); 
+
 // Defining buttons (program doesn't work without it)
 
 var srvstart = document.getElementById("serverpowerst");
@@ -187,6 +196,10 @@ try {
     // Disconnection from web socket
 
     socket.on('disconnect', (reason) => {
+        state_connecting.remove("enabled");
+        state_off.add("enabled");
+        state_on.remove("enabled");
+
         console.error('Socket disconnected:', reason);
         new popup(1, "Zakończono połączenie z serwerem niepowodzeniem.");
 
@@ -205,10 +218,17 @@ try {
     // Connection to web socket
 
     socket.on("connect", (con) => {
+        state_connecting.remove("enabled");
+        state_off.remove("enabled");
+        state_on.add("enabled");
+        
         new popup(3, "Nawiązano połączenie z serwerem.")
     });
 
 } catch(error) {
+    state_connecting.remove("enabled");
+    state_on.remove("enabled");
+    state_off.add("enabled");
     new popup(1, "Nie udało się połączyć z serwerem. Przepraszamy za wszelkie niedogodnośći, prosimy aby spróbować ponownie. Jeżeli to nie zadziała połącz się z administratorami sieci WALTUH.");
     console.error("Connection with websocket failed with error: " + error);
 }

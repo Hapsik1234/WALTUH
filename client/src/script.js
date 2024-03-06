@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-
 //(Christmas update) Snow gif
 
 function loadsnow() {

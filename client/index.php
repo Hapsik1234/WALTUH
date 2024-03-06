@@ -35,12 +35,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
 		<!--script defer type="module" src="http://localhost:8080/mcserver/client/node_modules/socket.io-client/build/esm/index.js"></script!-->
-		<script type="text/javascript" src="src/script.js"></script>
-
+		<script type="text/javascript" src="src/script.js"></script>	
 		<?php
 			echo('<script defer src="http://'.$const_ip.':'.$const_server_port.'/socket.io/socket.io.js"></script>');
 		?>
-		<script defer src="src/client.js" type="module"></script>	
+		<script defer src="src/client.js" type="module"></script>
 		<title>4Fun Server</title>
 		<?php
 		function chooseServer()
@@ -71,28 +70,27 @@
 			<div id="popup-container">
 			</div>
 		</div>
-		<div id="topbar"> 
-			<span class="separator"></span> 
-			<a href="#" id="gohome">Home</a> 
-			<span class="separator"></span> 
-			<a href="#" id="goconsole">Konsola</a> 
-			<span class="separator"></span> 
-			<a href="#" id="goplayers">Gracze</a>
-			<span class="separator"></span> 
-			<a href="#" id="goperformance">Wydajność</a>
-			<span class="separator"></span> 
-			<a href="#" id="goservers">Serwery</a>
-			<div id="indicator">
-				<!-- <div id="indicator_off">
-					a
-				</div>
-				<div id="indicator_connecting">
-					a
-				</div>
-				<div id="indicator_on">
-					a
-				</div> -->
-			</div>
+		<div id="topbar">
+			<div id="topbar-container"> 
+				<span class="separator"></span> 
+				<a href="#" id="gohome">Home</a> 
+				<span class="separator"></span> 
+				<a href="#" id="goconsole">Konsola</a> 
+				<span class="separator"></span> 
+				<a href="#" id="goplayers">Gracze</a>
+				<span class="separator"></span> 
+				<a href="#" id="goperformance">Wydajność</a>
+				<span class="separator"></span> 
+				<a href="#" id="goservers">Serwery</a>
+		</div>
+		<div class="indicator_container">
+			<div id="indicator_off" class="indicator"></div> 
+			<!-- // class="indicator_off indicator enabled" -->
+			<div id="indicator_connecting" class="indicator"></div> 
+			<!-- // class="indicator_connecting indicator" -->
+			<div id="indicator_on" class="indicator"></div> 
+			<!-- //class="indicator_on indicator" -->
+		</div>
 	</div>
 		<div class="main_content">
 			<div id="content">

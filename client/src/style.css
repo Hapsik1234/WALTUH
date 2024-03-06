@@ -2,7 +2,7 @@ body {
     background-color: #1f1f1f;
     margin: 0px;
     padding: 0px;
-    color: #000000;
+    /* color: #000000; */
     font-size: 20px;
     font-family: 'Maven Pro', sans-serif;
 }
@@ -85,12 +85,74 @@ body {
 	background-color: #ea1235;
 }
 
+.indicator_container
+{
+	float: right !important;
+	display: flex;
+	flex-direction: row !important;
+	margin-right: 20px;
+}
+
+@keyframes glow_indicator_on {
+	0% {box-shadow: none;}
+	50% {box-shadow: 0px 0px 4px 2px #59c73d;}
+	100% {box-shadow: none;}
+}
+
+@keyframes glow_indicator_connecting {
+	0% {box-shadow: none;}
+	50% {box-shadow: 0px 0px 4px 2px #c07942;}
+	100% {box-shadow: none;}
+}
+
+@keyframes glow_indicator_off {
+	0% {box-shadow: none}
+	50% {box-shadow: 0px 0px 4px 2px #c25757;}
+	100% {box-shadow: none}
+}
+
 .indicator
 {
+	margin:-15px 4px;
 	border-radius: 50px;
-	background-color: #ffffff;
-	float: left !important;
-	color: #ffffff !important;
+	width: 10px;
+	height: 10px;
+}
+
+#indicator_off
+{
+	background-color: #d78282;
+}
+#indicator_off.enabled
+{
+	background-color: #ff0000  !important;
+	animation-name: glow_indicator_off;
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+}
+
+#indicator_connecting
+{
+	background-color: #dba77f;
+}
+#indicator_connecting.enabled
+{
+	background-color: #ff7d1a !important;
+	animation-name: glow_indicator_connecting;
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+}
+
+#indicator_on
+{
+	background-color: #93d782;
+}
+#indicator_on.enabled
+{
+	background-color: #33ff00  !important;
+	animation-name: glow_indicator_on;
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
 }
 
 #svstate {
@@ -111,24 +173,26 @@ body {
 	width: 41px;
 }
 
-#topbar {
-    background-color: #111; 
+#topbar
+{
+	background-color: #111;
+	border-bottom: 2px solid #333; 
 	padding: 10px 0; 
-	text-align: center; 
-    border-bottom: 2px solid #333; 
+}
+
+#topbar-container {
+	/* text-align: center;  */
 	display: flex; 
-	/* justify-content: left;  */
-	/* align-items: center; */
   }
 
-#topbar a {
+#topbar-container a {
 	color: #fff;
 	text-decoration: none; 
 	margin: 0 20px; 
 	position: relative;
 }
 
-#topbar a:hover {
+#topbar-container a:hover {
     color: #66ccff;
 }
 
@@ -140,6 +204,7 @@ body {
 .separator { 
 	width: 1px; 
 	height: 20px; 
+	display: block;
 	background-color: #333; 
     margin: 0 10px;
 }
@@ -167,7 +232,6 @@ body {
 	flex-direction:row;
 	width: 450px;
 	height: 250px;
-	float: right;
 	/* margin-right: 320px; */
 }
 
@@ -306,7 +370,7 @@ body {
 
 
 @media (max-width: 600px) {
-    #topbar {
+    #topbar-container {
       flex-direction: column !important;
     }
 
@@ -317,7 +381,7 @@ body {
     
     .separator { display: none !important;
     }
-    #topbar a {
+    #topbar-container a {
       margin: 10px !important;
     }
 	#svstate {
