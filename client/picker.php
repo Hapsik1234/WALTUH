@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
-	$const_ip = "instead-former.at.ply.gg";	//Twoje ip instead-former.at.ply.gg
-	$const_server_port = "4073";	//Port od gniazda sieciowego (zobacz server.js)
+	$const_ip = "localhost";	//Twoje ip instead-former.at.ply.gg
+	$const_server_port = "3000";	//Port od websocketa (zobacz server.js) (4073)
 	$key = "oJD8XtaeBQrsprQ0eVareQ";
 
 	header('Access-Control-Allow-Origin: https://4fun-server.glitch.me');
@@ -22,6 +22,9 @@
 			//echo("No auth");
 		}
 	}
+
+
+
 	// authcheck($key);	//Uncomment for service work
 	
 ?>
@@ -36,42 +39,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
     <!--script defer type="module" src="http://localhost:8080/mcserver/client/node_modules/socket.io-client/build/esm/index.js"></script!-->
-    <script type="text/javascript" src="src/script.js"></script>
+    <script type="text/javascript" src="src/snow.js"></script>
+    <script type="text/javascript" src="src/popup.js"></script>
 
     <?php
         echo('<script defer src="http://'.$const_ip.':'.$const_server_port.'/socket.io/socket.io.js"></script>');
     ?>
-	<script defer src="src/client.js" type="module"></script>
+	<script defer src="src/picker.js" type="module"></script>
     <meta charset="UTF-8" />
     <title>WALTUH server manager</title>
 </head>
 <body>
+		<div id="tower-of-piza">
+			<div id="popup-container">
+			</div>
+		</div>
+	<div id="topbar">
+	<span class="separator"></span>
+	<div class="indicator_container">
+			<div id="indicator_off" class="indicator"></div> 
+			<!-- // class="indicator_off indicator enabled" -->
+			<div id="indicator_connecting" class="indicator"></div> 
+			<!-- // class="indicator_connecting indicator" -->
+			<div id="indicator_on" class="indicator"></div> 
+			<!-- // class="indicator_on indicator" -->
+		</div>
+	</div>
+	
 	<div id="server_list_container">
-    	<div class="server_element">
+    	<!-- <div class="server_element">
 			<div class="server_name">Server.name</div>
-			<span class="server_properties">server.status<br></span>
-			<span class="server_properties">server.version<br></span>
-			<span class="server_properties">server.engine<br></span>
+			<span class="server_status">server.status<br></span>
+			<span class="server_version">server.version<br></span>
+			<span class="server_engine">server.engine<br></span>
 			<div class="server_status_indicator_starting"></div>
-		</div>
-
-		<div class="server_element">
-			<div class="server_name">Przykładowy Serwer 1</div>
-			<span class="server_properties">Online<br></span>
-			<span class="server_properties">1.19.2<br></span>
-			<span class="server_properties">Fabric<br></span>
-			<div class="server_status_indicator_on"></div>
-			</span>
-		</div>
-
-		<div class="server_element">
-			<div class="server_name">Przykładowy Serwer 2</div>
-			<span class="server_properties">Offline<br></span>
-			<span class="server_properties">1.12.2<br></span>
-			<span class="server_properties">Forge<br></span>
-			<div class="server_status_indicator_off"></div>
-			</span>
-		</div>
+			server_status_indicator_starting, server_status_indicator_on, server_status_indicator_off
+		</div> -->
 	</div>
 </body>
 </html>

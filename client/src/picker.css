@@ -25,7 +25,7 @@
 	font-weight: 600;
 }
 
-.server_properties
+.server_engine, .server_version, .server_status
 {
 	margin: 20px 28px !important;
 }

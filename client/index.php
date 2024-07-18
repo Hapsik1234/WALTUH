@@ -1,24 +1,24 @@
 <?php
-	$const_ip = "localhost";	//Twoje ip instead-former.at.ply.gg
-	$const_server_port = "3000";	//Port od gniazda sieciowego (zobacz server.js)
+	$const_ip = "localhost";	// Twoje ip instead-former.at.ply.gg
+	$const_server_port = "3000";	// Port od gniazda sieciowego (zobacz server.js)
 	$key = "oJD8XtaeBQrsprQ0eVareQ";
 
 	header('Access-Control-Allow-Origin: https://4fun-server.glitch.me');
 	header('Access-Control-Allow-Private-Network: true');
 
 	function authcheck($accesskey) {
-		//echo("Auth checking");
+		// echo("Auth checking");
 		if(isset($_GET['auth'])) {
 			$authkey = $_GET['auth'];
 			if($authkey!==$accesskey) {
 				header("Location: error.php");
 				exit();
-				//echo("Wrong, orginal: $accesskey, your: $authkey");
+				// echo("Wrong, orginal: $accesskey, your: $authkey");
 			}
 		} else {
 			header("Location: error.php");
 			exit();
-			//echo("No auth");
+			// echo("No auth");
 		}
 	}
 	// authcheck($key);	//Uncomment for service work
@@ -34,13 +34,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600;800&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
-		<!--script defer type="module" src="http://localhost:8080/mcserver/client/node_modules/socket.io-client/build/esm/index.js"></script!-->
-		<script type="text/javascript" src="src/script.js"></script>	
-		<?php
-			echo('<script defer src="http://'.$const_ip.':'.$const_server_port.'/socket.io/socket.io.js"></script>');
-		?>
-		<script defer src="src/client.js" type="module"></script>
-		<title>4Fun Server</title>
+		<!--script defer type="module" src="http://localhost:8080/mcserver/client/node_modules/socket.io-client/build/esm/index.js"></script-->
 		<?php
 		function chooseServer()
 		{
@@ -48,21 +42,31 @@
 			{
 				$server = $_GET['server'];
 				echo("<script>
-				var ServerInstance = '$server';
-				console.log(ServerInstance);
-				</script>");
+						var ServerInstance = '$server';
+						console.log(ServerInstance);
+					</script>");
 			}
 			else
 			{
 				header("Location: picker.php");
 				exit();
 			}
-	
 		}
 			chooseServer();
 			
 		?>
+		<!-- Class files -->
+		<script type="text/javascript" src="src/snow.js"></script>	
+		<script type="text/javascript" src="src/playsound.js"></script>	
+		<script type="text/javascript" src="src/popup.js"></script>
+		
+		<?php
+			echo('<script defer src="http://'.$const_ip.':'.$const_server_port.'/socket.io/socket.io.js"></script>');
+		?>
 
+		<script defer src="src/client.js" type="module"></script>
+		
+		<title>4Fun Server</title>
 	</head>
 	<body>
 		<!-- <div id="christmas"></div> -->
@@ -73,14 +77,14 @@
 		<div id="topbar">
 			<div id="topbar-container"> 
 				<span class="separator"></span> 
-				<a href="#" id="gohome">Home</a> 
+				<a href="./picker.php" id="gohome">Home</a>
 				<span class="separator"></span> 
-				<a href="#" id="goconsole">Konsola</a> 
+				<a href="#" id="goconsole">Konsola</a>
 				<span class="separator"></span> 
 				<a href="#" id="goplayers">Gracze</a>
 				<span class="separator"></span> 
 				<a href="#" id="goperformance">Wydajność</a>
-				<span class="separator"></span> 
+				<span class="separator"></span>
 				<a href="#" id="goservers">Serwery</a>
 		</div>
 		<div class="indicator_container">
@@ -89,7 +93,7 @@
 			<div id="indicator_connecting" class="indicator"></div> 
 			<!-- // class="indicator_connecting indicator" -->
 			<div id="indicator_on" class="indicator"></div> 
-			<!-- //class="indicator_on indicator" -->
+			<!-- // class="indicator_on indicator" -->
 		</div>
 	</div>
 		<div class="main_content">
@@ -105,26 +109,25 @@
 			</div>
 			<div class="moar_content">
 				<div class="textbox">
-					<span>Lorem ipsum</span>
+					<span id="text_about">Łączenie...</span>
 				</div>
 
 				<div class="additional">
 
 					<div class="text_element">
-						<span class="box_title">Address</span><br>
-						<span class="box_text">minecraft.4fun.freeddns.org:53522</span>
+						<span class="box_title">Adres</span><br>
+						<span class="box_text" id="text_address">Łączenie...</span>
 					</div>
 
 					<div class="text_element">
-						<span class="box_title">Version</span><br>
-						<span class="box_text">1.20.1</span>
+						<span class="box_title">Wersja</span><br>
+						<span class="box_text" id="text_version">Łączenie...</span>
 					</div>
 
 					<div class="text_element">
-						<span class="box_title">Engine</span><br>
-						<span class="box_text">Fabric</span>
+						<span class="box_title">Silnik</span><br>
+						<span class="box_text" id="text_engine">Łączenie...</span>
 					</div>
-
 				</div>
 			</div>	
 		</div>
