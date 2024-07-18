@@ -1,0 +1,14 @@
+{
+    "server_port": "3000",
+    "illegals": ["&"],
+    "config_file_name": "properties.json",
+    "server_check_refresh_rate": 5000,
+    "config_file_properties": [
+        "address",
+        "version",
+        "engine",
+        "run",
+        "text",
+        "name"
+    ]
+}
