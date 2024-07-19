@@ -94,11 +94,11 @@ class Server {
   start() { this.cmd.stdin.write("cd "+ path_to_mcserver + "\\"+ server.name + " && sudo bash run.sh\n"); }
   stop () { this.cmd.stdin.write('stop\n'); }
   
-  execute(command)
+  execute(command, bash)
   {
     if((!cvar.illegals.some(sub => command.includes(sub)))&&this.state == "on")
     {
-      server.cmd.stdin.write(command + '\n');
+      bash.cmd.stdin.write(command + '\n');
     }
   }
 }
@@ -245,7 +245,7 @@ function requestHandler(type, request, server) {
     case "command":
 
       if (server.state=="on");
-        server.execute(request);
+        server.execute(request, server);
     break;
   }
 }
